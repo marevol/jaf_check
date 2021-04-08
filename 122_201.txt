@@ -1,0 +1,154 @@
+<<<jakarta.activation-api-1.2.2-sources.jar>>>
+javax/activation/ActivationDataFlavor.java
+javax/activation/CommandInfo.java
+javax/activation/CommandMap.java
+javax/activation/CommandObject.java
+javax/activation/DataContentHandlerFactory.java
+javax/activation/DataContentHandler.java
+javax/activation/DataHandler.java
+javax/activation/DataSource.java
+javax/activation/FileDataSource.java
+javax/activation/FileTypeMap.java
+javax/activation/MailcapCommandMap.java
+javax/activation/MimeType.java
+javax/activation/MimeTypeParameterList.java
+javax/activation/MimeTypeParseException.java
+javax/activation/MimetypesFileTypeMap.java
+javax/activation/package.html
+javax/activation/SecuritySupport.java
+javax/activation/UnsupportedDataTypeException.java
+javax/activation/URLDataSource.java
+META-INF/LICENSE.md
+META-INF/MANIFEST.MF
+META-INF/NOTICE.md
+module-info.java
+pom.xml
+
+<<<jakarta.activation-api-2.0.1-sources.jar>>>
+jakarta/activation/ActivationDataFlavor.java
+jakarta/activation/CommandInfo.java
+jakarta/activation/CommandMap.java
+jakarta/activation/CommandObject.java
+jakarta/activation/DataContentHandlerFactory.java
+jakarta/activation/DataContentHandler.java
+jakarta/activation/DataHandler.java
+jakarta/activation/DataSource.java
+jakarta/activation/FileDataSource.java
+jakarta/activation/FileTypeMap.java
+jakarta/activation/MailcapCommandMap.java
+jakarta/activation/MimeType.java
+jakarta/activation/MimeTypeParameterList.java
+jakarta/activation/MimeTypeParseException.java
+jakarta/activation/MimetypesFileTypeMap.java
+jakarta/activation/package.html
+jakarta/activation/SecuritySupport.java
+jakarta/activation/UnsupportedDataTypeException.java
+jakarta/activation/URLDataSource.java
+META-INF/LICENSE.md
+META-INF/MANIFEST.MF
+META-INF/maven/jakarta.activation/jakarta.activation-api/pom.properties
+META-INF/maven/jakarta.activation/jakarta.activation-api/pom.xml
+META-INF/NOTICE.md
+module-info.java
+
+<<<Files: jakarta.activation-api-1.2.2-sources.jar - jakarta.activation-api-2.0.1-sources.jar>>>
+--- /tmp/jaf1.1915505	2021-04-08 09:36:16.223469745 +0900
++++ /tmp/jaf2.1915505	2021-04-08 09:36:16.227469751 +0900
+@@ -1,24 +1,25 @@
+-javax/activation/ActivationDataFlavor.java
+-javax/activation/CommandInfo.java
+-javax/activation/CommandMap.java
+-javax/activation/CommandObject.java
+-javax/activation/DataContentHandlerFactory.java
+-javax/activation/DataContentHandler.java
+-javax/activation/DataHandler.java
+-javax/activation/DataSource.java
+-javax/activation/FileDataSource.java
+-javax/activation/FileTypeMap.java
+-javax/activation/MailcapCommandMap.java
+-javax/activation/MimeType.java
+-javax/activation/MimeTypeParameterList.java
+-javax/activation/MimeTypeParseException.java
+-javax/activation/MimetypesFileTypeMap.java
+-javax/activation/package.html
+-javax/activation/SecuritySupport.java
+-javax/activation/UnsupportedDataTypeException.java
+-javax/activation/URLDataSource.java
++jakarta/activation/ActivationDataFlavor.java
++jakarta/activation/CommandInfo.java
++jakarta/activation/CommandMap.java
++jakarta/activation/CommandObject.java
++jakarta/activation/DataContentHandlerFactory.java
++jakarta/activation/DataContentHandler.java
++jakarta/activation/DataHandler.java
++jakarta/activation/DataSource.java
++jakarta/activation/FileDataSource.java
++jakarta/activation/FileTypeMap.java
++jakarta/activation/MailcapCommandMap.java
++jakarta/activation/MimeType.java
++jakarta/activation/MimeTypeParameterList.java
++jakarta/activation/MimeTypeParseException.java
++jakarta/activation/MimetypesFileTypeMap.java
++jakarta/activation/package.html
++jakarta/activation/SecuritySupport.java
++jakarta/activation/UnsupportedDataTypeException.java
++jakarta/activation/URLDataSource.java
+ META-INF/LICENSE.md
+ META-INF/MANIFEST.MF
++META-INF/maven/jakarta.activation/jakarta.activation-api/pom.properties
++META-INF/maven/jakarta.activation/jakarta.activation-api/pom.xml
+ META-INF/NOTICE.md
+ module-info.java
+-pom.xml
+
+<<<Contents: jakarta.activation-api-1.2.2 - jakarta.activation-api-2.0.1>>>
+jakarta.activation-api-2.0.1 のみに存在: jakarta
+jakarta.activation-api-1.2.2 のみに存在: javax
+diff -ubr jakarta.activation-api-1.2.2/META-INF/MANIFEST.MF jakarta.activation-api-2.0.1/META-INF/MANIFEST.MF
+--- jakarta.activation-api-1.2.2/META-INF/MANIFEST.MF	2020-02-20 18:37:28.000000000 +0900
++++ jakarta.activation-api-2.0.1/META-INF/MANIFEST.MF	2021-02-12 08:23:48.000000000 +0900
+@@ -1,6 +1,4 @@
+ Manifest-Version: 1.0
+-Archiver-Version: Plexus Archiver
+-Created-By: Apache Maven
+-Built-By: default
+-Build-Jdk: 11.0.4
++Created-By: Maven Archiver 3.4.0
++Build-Jdk-Spec: 11
+ 
+jakarta.activation-api-2.0.1/META-INF のみに存在: maven
+diff -ubr jakarta.activation-api-1.2.2/META-INF/NOTICE.md jakarta.activation-api-2.0.1/META-INF/NOTICE.md
+--- jakarta.activation-api-1.2.2/META-INF/NOTICE.md	2020-02-20 18:34:28.000000000 +0900
++++ jakarta.activation-api-2.0.1/META-INF/NOTICE.md	2021-02-12 08:22:56.000000000 +0900
+@@ -23,11 +23,3 @@
+ The project maintains the following source code repositories:
+ 
+ * https://github.com/eclipse-ee4j/jaf
+-
+-## Third-party Content
+-
+-This project leverages the following third party content.
+-
+-JUnit (4.12)
+-
+-* License: Eclipse Public License
+diff -ubr jakarta.activation-api-1.2.2/module-info.java jakarta.activation-api-2.0.1/module-info.java
+--- jakarta.activation-api-1.2.2/module-info.java	2020-02-20 18:34:30.000000000 +0900
++++ jakarta.activation-api-2.0.1/module-info.java	2021-02-12 08:22:58.000000000 +0900
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1997, 2020 Oracle and/or its affiliates. All rights reserved.
+  *
+  * This program and the accompanying materials are made available under the
+  * terms of the Eclipse Distribution License v. 1.0, which is available at
+@@ -9,7 +9,6 @@
+  */
+ 
+ module jakarta.activation {
+-    exports javax.activation;
++    exports jakarta.activation;
+     requires java.logging;
+-    requires java.desktop;	// for image/jpeg handler
+ }
+jakarta.activation-api-1.2.2 のみに存在: pom.xml

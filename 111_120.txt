@@ -1,0 +1,1807 @@
+<<<activation-1.1.1-sources.jar>>>
+com/sun/activation/registries/LogSupport.java
+com/sun/activation/registries/MailcapFile.java
+com/sun/activation/registries/MailcapParseException.java
+com/sun/activation/registries/MailcapTokenizer.java
+com/sun/activation/registries/MimeTypeEntry.java
+com/sun/activation/registries/MimeTypeFile.java
+com/sun/activation/viewers/ImageViewerCanvas.java
+com/sun/activation/viewers/ImageViewer.java
+com/sun/activation/viewers/TextEditor.java
+com/sun/activation/viewers/TextViewer.java
+javax/activation/ActivationDataFlavor.java
+javax/activation/CommandInfo.java
+javax/activation/CommandMap.java
+javax/activation/CommandObject.java
+javax/activation/DataContentHandlerFactory.java
+javax/activation/DataContentHandler.java
+javax/activation/DataHandler.java
+javax/activation/DataSource.java
+javax/activation/FileDataSource.java
+javax/activation/FileTypeMap.java
+javax/activation/MailcapCommandMap.java
+javax/activation/MimeType.java
+javax/activation/MimeTypeParameterList.java
+javax/activation/MimeTypeParseException.java
+javax/activation/MimetypesFileTypeMap.java
+javax/activation/package.html
+javax/activation/SecuritySupport.java
+javax/activation/UnsupportedDataTypeException.java
+javax/activation/URLDataSource.java
+
+<<<javax.activation-api-1.2.0-sources.jar>>>
+javax/activation/ActivationDataFlavor.java
+javax/activation/CommandInfo.java
+javax/activation/CommandInfo.java.jdk8
+javax/activation/CommandInfo.java.jdk9
+javax/activation/CommandInfo.java.jdk9-
+javax/activation/CommandMap.java
+javax/activation/CommandObject.java
+javax/activation/DataContentHandlerFactory.java
+javax/activation/DataContentHandler.java
+javax/activation/DataHandler.java
+javax/activation/DataSource.java
+javax/activation/FileDataSource.java
+javax/activation/FileTypeMap.java
+javax/activation/MailcapCommandMap.java
+javax/activation/MimeType.java
+javax/activation/MimeTypeParameterList.java
+javax/activation/MimeTypeParseException.java
+javax/activation/MimetypesFileTypeMap.java
+javax/activation/package.html
+javax/activation/SecuritySupport.java
+javax/activation/UnsupportedDataTypeException.java
+javax/activation/URLDataSource.java
+javax/activation/.x9.swp
+META-INF/LICENSE.txt
+META-INF/MANIFEST.MF
+pom.xml
+
+<<<Files: activation-1.1.1-sources.jar - javax.activation-api-1.2.0-sources.jar>>>
+--- /tmp/jaf1.1915505	2021-04-08 09:36:16.171469669 +0900
++++ /tmp/jaf2.1915505	2021-04-08 09:36:16.179469680 +0900
+@@ -1,15 +1,8 @@
+-com/sun/activation/registries/LogSupport.java
+-com/sun/activation/registries/MailcapFile.java
+-com/sun/activation/registries/MailcapParseException.java
+-com/sun/activation/registries/MailcapTokenizer.java
+-com/sun/activation/registries/MimeTypeEntry.java
+-com/sun/activation/registries/MimeTypeFile.java
+-com/sun/activation/viewers/ImageViewerCanvas.java
+-com/sun/activation/viewers/ImageViewer.java
+-com/sun/activation/viewers/TextEditor.java
+-com/sun/activation/viewers/TextViewer.java
+ javax/activation/ActivationDataFlavor.java
+ javax/activation/CommandInfo.java
++javax/activation/CommandInfo.java.jdk8
++javax/activation/CommandInfo.java.jdk9
++javax/activation/CommandInfo.java.jdk9-
+ javax/activation/CommandMap.java
+ javax/activation/CommandObject.java
+ javax/activation/DataContentHandlerFactory.java
+@@ -27,3 +20,7 @@
+ javax/activation/SecuritySupport.java
+ javax/activation/UnsupportedDataTypeException.java
+ javax/activation/URLDataSource.java
++javax/activation/.x9.swp
++META-INF/LICENSE.txt
++META-INF/MANIFEST.MF
++pom.xml
+
+<<<Contents: activation-1.1.1 - javax.activation-api-1.2.0>>>
+activation-1.1.1 のみに存在: com
+diff -ubr activation-1.1.1/javax/activation/ActivationDataFlavor.java javax.activation-api-1.2.0/javax/activation/ActivationDataFlavor.java
+--- activation-1.1.1/javax/activation/ActivationDataFlavor.java	2007-08-13 16:32:08.000000000 +0900
++++ javax.activation-api-1.2.0/javax/activation/ActivationDataFlavor.java	2017-05-19 15:41:34.000000000 +0900
+@@ -1,27 +1,31 @@
+ /*
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+  *
+- * Copyright 1997-2007 Sun Microsystems, Inc. All rights reserved.
++ * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
+  *
+  * The contents of this file are subject to the terms of either the GNU
+  * General Public License Version 2 only ("GPL") or the Common Development
+  * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License. You can obtain
+- * a copy of the License at https://glassfish.dev.java.net/public/CDDL+GPL.html
+- * or glassfish/bootstrap/legal/LICENSE.txt.  See the License for the specific
++ * may not use this file except in compliance with the License.  You can
++ * obtain a copy of the License at
++ * https://oss.oracle.com/licenses/CDDL+GPL-1.1
++ * or LICENSE.txt.  See the License for the specific
+  * language governing permissions and limitations under the License.
+  *
+  * When distributing the software, include this License Header Notice in each
+- * file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+- * Sun designates this particular file as subject to the "Classpath" exception
+- * as provided by Sun in the GPL Version 2 section of the License file that
+- * accompanied this code.  If applicable, add the following below the License
+- * Header, with the fields enclosed by brackets [] replaced by your own
+- * identifying information: "Portions Copyrighted [year]
+- * [name of copyright owner]"
++ * file and include the License file at LICENSE.txt.
+  *
+- * Contributor(s):
++ * GPL Classpath Exception:
++ * Oracle designates this particular file as subject to the "Classpath"
++ * exception as provided by Oracle in the GPL Version 2 section of the License
++ * file that accompanied this code.
++ *
++ * Modifications:
++ * If applicable, add the following below the License Header, with the fields
++ * enclosed by brackets [] replaced by your own identifying information:
++ * "Portions Copyright [year] [name of copyright owner]"
+  *
++ * Contributor(s):
+  * If you wish your version of this file to be governed by only the CDDL or
+  * only the GPL Version 2, indicate your decision by adding "[Contributor]
+  * elects to include this software in this distribution under the [CDDL or GPL
+@@ -34,10 +38,6 @@
+  * holder.
+  */
+ 
+-/*
+- * @(#)ActivationDataFlavor.java	1.16 07/07/13
+- */
+-
+ package javax.activation;
+ 
+ import java.awt.datatransfer.DataFlavor;
+diff -ubr activation-1.1.1/javax/activation/CommandInfo.java javax.activation-api-1.2.0/javax/activation/CommandInfo.java
+--- activation-1.1.1/javax/activation/CommandInfo.java	2007-05-14 14:34:26.000000000 +0900
++++ javax.activation-api-1.2.0/javax/activation/CommandInfo.java	2017-05-19 15:41:34.000000000 +0900
+@@ -1,27 +1,31 @@
+ /*
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+  *
+- * Copyright 1997-2007 Sun Microsystems, Inc. All rights reserved.
++ * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
+  *
+  * The contents of this file are subject to the terms of either the GNU
+  * General Public License Version 2 only ("GPL") or the Common Development
+  * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License. You can obtain
+- * a copy of the License at https://glassfish.dev.java.net/public/CDDL+GPL.html
+- * or glassfish/bootstrap/legal/LICENSE.txt.  See the License for the specific
++ * may not use this file except in compliance with the License.  You can
++ * obtain a copy of the License at
++ * https://oss.oracle.com/licenses/CDDL+GPL-1.1
++ * or LICENSE.txt.  See the License for the specific
+  * language governing permissions and limitations under the License.
+  *
+  * When distributing the software, include this License Header Notice in each
+- * file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+- * Sun designates this particular file as subject to the "Classpath" exception
+- * as provided by Sun in the GPL Version 2 section of the License file that
+- * accompanied this code.  If applicable, add the following below the License
+- * Header, with the fields enclosed by brackets [] replaced by your own
+- * identifying information: "Portions Copyrighted [year]
+- * [name of copyright owner]"
++ * file and include the License file at LICENSE.txt.
+  *
+- * Contributor(s):
++ * GPL Classpath Exception:
++ * Oracle designates this particular file as subject to the "Classpath"
++ * exception as provided by Oracle in the GPL Version 2 section of the License
++ * file that accompanied this code.
++ *
++ * Modifications:
++ * If applicable, add the following below the License Header, with the fields
++ * enclosed by brackets [] replaced by your own identifying information:
++ * "Portions Copyright [year] [name of copyright owner]"
+  *
++ * Contributor(s):
+  * If you wish your version of this file to be governed by only the CDDL or
+  * only the GPL Version 2, indicate your decision by adding "[Contributor]
+  * elects to include this software in this distribution under the [CDDL or GPL
+@@ -34,14 +38,13 @@
+  * holder.
+  */
+ 
+-/*
+- * @(#)CommandInfo.java	1.12 07/05/14
+- */
+-
+ package javax.activation;
+ 
+ import java.io.*;
+-import java.beans.Beans;
++import java.lang.reflect.InvocationTargetException;
++import java.lang.reflect.Method;
++import java.security.AccessController;
++import java.security.PrivilegedAction;
+ 
+ /**
+  * The CommandInfo class is used by CommandMap implementations to
+@@ -97,8 +100,14 @@
+     /**
+      * Return the instantiated JavaBean component.
+      * <p>
+-     * Begin by instantiating the component with
+-     * <code>Beans.instantiate()</code>.
++     * If the current runtime environment supports
++     * {@link java.beans.Beans#instantiate Beans.instantiate},
++     * use it to instantiate the JavaBeans component.  Otherwise, use
++     * {@link java.lang.Class#forName Class.forName}.
++     * <p>
++     * The component class needs to be public.
++     * On Java SE 9 and newer, if the component class is in a named module,
++     * it needs to be in an exported package.
+      * <p>
+      * If the bean implements the <code>javax.activation.CommandObject</code>
+      * interface, call its <code>setCommandContext</code> method.
+@@ -121,6 +130,9 @@
+      *			passed to the command.
+      * @param loader	The ClassLoader to be used to instantiate the bean.
+      * @return The bean
++     * @exception	IOException	for failures reading data
++     * @exception	ClassNotFoundException	if command object class can't
++     *						be found
+      * @see java.beans.Beans#instantiate
+      * @see javax.activation.CommandObject
+      */
+@@ -129,7 +141,7 @@
+ 	Object new_bean = null;
+ 
+ 	// try to instantiate the bean
+-	new_bean = java.beans.Beans.instantiate(loader, className);
++	new_bean = Beans.instantiate(loader, className);
+ 
+ 	// if we got one and it is a CommandObject
+ 	if (new_bean != null) {
+@@ -148,4 +160,86 @@
+ 
+ 	return new_bean;
+     }
++
++    /**
++     * Helper class to invoke Beans.instantiate reflectively or the equivalent
++     * with core reflection when module java.desktop is not readable.
++     */
++    private static final class Beans {
++        static final Method instantiateMethod;
++
++        static {
++            Method m;
++            try {
++                Class<?> c = Class.forName("java.beans.Beans");
++                m = c.getDeclaredMethod("instantiate", ClassLoader.class, String.class);
++            } catch (ClassNotFoundException e) {
++                m = null;
++            } catch (NoSuchMethodException e) {
++                m = null;
++            }
++            instantiateMethod = m;
++        }
++
++        /**
++         * Equivalent to invoking java.beans.Beans.instantiate(loader, cn)
++         */
++        static Object instantiate(ClassLoader loader, String cn)
++                throws IOException, ClassNotFoundException {
++
++            Exception exception;
++
++            if (instantiateMethod != null) {
++
++                // invoke Beans.instantiate
++                try {
++                    return instantiateMethod.invoke(null, loader, cn);
++                } catch (InvocationTargetException e) {
++                    exception = e;
++                } catch (IllegalAccessException e) {
++                    exception = e;
++                }
++
++            } else {
++
++		SecurityManager security = System.getSecurityManager();
++		if (security != null) {
++		    // if it's ok with the SecurityManager, it's ok with me.
++		    String cname = cn.replace('/', '.');
++		    if (cname.startsWith("[")) {
++			int b = cname.lastIndexOf('[') + 2;
++			if (b > 1 && b < cname.length()) {
++			    cname = cname.substring(b);
++			}
++		    }
++		    int i = cname.lastIndexOf('.');
++		    if (i != -1) {
++			security.checkPackageAccess(cname.substring(0, i));
++		    }
++		}
++
++                // Beans.instantiate specified to use SCL when loader is null
++                if (loader == null) {
++                    loader = (ClassLoader)
++		        AccessController.doPrivileged(new PrivilegedAction() {
++			    public Object run() {
++				ClassLoader cl = null;
++				try {
++				    cl = ClassLoader.getSystemClassLoader();
++				} catch (SecurityException ex) { }
++				return cl;
++			    }
++			});
++                }
++                Class<?> beanClass = Class.forName(cn, true, loader);
++                try {
++                    return beanClass.newInstance();
++                } catch (Exception ex) {
++                    throw new ClassNotFoundException(beanClass + ": " + ex, ex);
++                }
++
++            }
++            return null;
++        }
++    }
+ }
+javax.activation-api-1.2.0/javax/activation のみに存在: CommandInfo.java.jdk8
+javax.activation-api-1.2.0/javax/activation のみに存在: CommandInfo.java.jdk9
+javax.activation-api-1.2.0/javax/activation のみに存在: CommandInfo.java.jdk9-
+diff -ubr activation-1.1.1/javax/activation/CommandMap.java javax.activation-api-1.2.0/javax/activation/CommandMap.java
+--- activation-1.1.1/javax/activation/CommandMap.java	2007-05-14 14:34:26.000000000 +0900
++++ javax.activation-api-1.2.0/javax/activation/CommandMap.java	2017-05-19 15:41:32.000000000 +0900
+@@ -1,27 +1,31 @@
+ /*
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+  *
+- * Copyright 1997-2007 Sun Microsystems, Inc. All rights reserved.
++ * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
+  *
+  * The contents of this file are subject to the terms of either the GNU
+  * General Public License Version 2 only ("GPL") or the Common Development
+  * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License. You can obtain
+- * a copy of the License at https://glassfish.dev.java.net/public/CDDL+GPL.html
+- * or glassfish/bootstrap/legal/LICENSE.txt.  See the License for the specific
++ * may not use this file except in compliance with the License.  You can
++ * obtain a copy of the License at
++ * https://oss.oracle.com/licenses/CDDL+GPL-1.1
++ * or LICENSE.txt.  See the License for the specific
+  * language governing permissions and limitations under the License.
+  *
+  * When distributing the software, include this License Header Notice in each
+- * file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+- * Sun designates this particular file as subject to the "Classpath" exception
+- * as provided by Sun in the GPL Version 2 section of the License file that
+- * accompanied this code.  If applicable, add the following below the License
+- * Header, with the fields enclosed by brackets [] replaced by your own
+- * identifying information: "Portions Copyrighted [year]
+- * [name of copyright owner]"
++ * file and include the License file at LICENSE.txt.
+  *
+- * Contributor(s):
++ * GPL Classpath Exception:
++ * Oracle designates this particular file as subject to the "Classpath"
++ * exception as provided by Oracle in the GPL Version 2 section of the License
++ * file that accompanied this code.
++ *
++ * Modifications:
++ * If applicable, add the following below the License Header, with the fields
++ * enclosed by brackets [] replaced by your own identifying information:
++ * "Portions Copyright [year] [name of copyright owner]"
+  *
++ * Contributor(s):
+  * If you wish your version of this file to be governed by only the CDDL or
+  * only the GPL Version 2, indicate your decision by adding "[Contributor]
+  * elects to include this software in this distribution under the [CDDL or GPL
+@@ -34,12 +38,11 @@
+  * holder.
+  */
+ 
+-/*
+- * @(#)CommandMap.java	1.20 07/05/14
+- */
+-
+ package javax.activation;
+ 
++import java.util.Map;
++import java.util.WeakHashMap;
++
+ 
+ /**
+  * The CommandMap class provides an interface to a registry of
+@@ -51,10 +54,12 @@
+  */
+ public abstract class CommandMap {
+     private static CommandMap defaultCommandMap = null;
++    private static Map<ClassLoader,CommandMap> map =
++				new WeakHashMap<ClassLoader,CommandMap>();
++
+ 
+     /**
+      * Get the default CommandMap.
+-     * <p>
+      *
+      * <ul>
+      * <li> In cases where a CommandMap instance has been previously set
+@@ -69,11 +74,18 @@
+      *
+      * @return the CommandMap
+      */
+-    public static CommandMap getDefaultCommandMap() {
+-	if (defaultCommandMap == null)
+-	    defaultCommandMap = new MailcapCommandMap();
+-
++    public static synchronized CommandMap getDefaultCommandMap() {
++	if (defaultCommandMap != null)
+ 	return defaultCommandMap;
++
++	// fetch per-thread-context-class-loader default
++	ClassLoader tccl = SecuritySupport.getContextClassLoader();
++	CommandMap def = map.get(tccl);
++	if (def == null) {
++	    def = new MailcapCommandMap();
++	    map.put(tccl, def);
++	}
++	return def;
+     }
+ 
+     /**
+@@ -84,7 +96,7 @@
+      * @exception SecurityException if the caller doesn't have permission
+      *					to change the default
+      */
+-    public static void setDefaultCommandMap(CommandMap commandMap) {
++    public static synchronized void setDefaultCommandMap(CommandMap commandMap) {
+ 	SecurityManager security = System.getSecurityManager();
+ 	if (security != null) {
+ 	    try {
+@@ -92,13 +104,17 @@
+ 		security.checkSetFactory();
+ 	    } catch (SecurityException ex) {
+ 		// otherwise, we also allow it if this code and the
+-		// factory come from the same class loader (e.g.,
++		// factory come from the same (non-system) class loader (e.g.,
+ 		// the JAF classes were loaded with the applet classes).
+-		if (CommandMap.class.getClassLoader() !=
+-			    commandMap.getClass().getClassLoader())
++		ClassLoader cl = CommandMap.class.getClassLoader();
++		if (cl == null || cl.getParent() == null ||
++		    cl != commandMap.getClass().getClassLoader()) {
+ 		    throw ex;
+ 	    }
+ 	}
++	}
++	// remove any per-thread-context-class-loader CommandMap
++	map.remove(SecuritySupport.getContextClassLoader());
+ 	defaultCommandMap = commandMap;
+     }
+ 
+diff -ubr activation-1.1.1/javax/activation/CommandObject.java javax.activation-api-1.2.0/javax/activation/CommandObject.java
+--- activation-1.1.1/javax/activation/CommandObject.java	2007-05-14 14:34:26.000000000 +0900
++++ javax.activation-api-1.2.0/javax/activation/CommandObject.java	2017-05-19 15:41:32.000000000 +0900
+@@ -1,27 +1,31 @@
+ /*
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+  *
+- * Copyright 1997-2007 Sun Microsystems, Inc. All rights reserved.
++ * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
+  *
+  * The contents of this file are subject to the terms of either the GNU
+  * General Public License Version 2 only ("GPL") or the Common Development
+  * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License. You can obtain
+- * a copy of the License at https://glassfish.dev.java.net/public/CDDL+GPL.html
+- * or glassfish/bootstrap/legal/LICENSE.txt.  See the License for the specific
++ * may not use this file except in compliance with the License.  You can
++ * obtain a copy of the License at
++ * https://oss.oracle.com/licenses/CDDL+GPL-1.1
++ * or LICENSE.txt.  See the License for the specific
+  * language governing permissions and limitations under the License.
+  *
+  * When distributing the software, include this License Header Notice in each
+- * file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+- * Sun designates this particular file as subject to the "Classpath" exception
+- * as provided by Sun in the GPL Version 2 section of the License file that
+- * accompanied this code.  If applicable, add the following below the License
+- * Header, with the fields enclosed by brackets [] replaced by your own
+- * identifying information: "Portions Copyrighted [year]
+- * [name of copyright owner]"
++ * file and include the License file at LICENSE.txt.
+  *
+- * Contributor(s):
++ * GPL Classpath Exception:
++ * Oracle designates this particular file as subject to the "Classpath"
++ * exception as provided by Oracle in the GPL Version 2 section of the License
++ * file that accompanied this code.
++ *
++ * Modifications:
++ * If applicable, add the following below the License Header, with the fields
++ * enclosed by brackets [] replaced by your own identifying information:
++ * "Portions Copyright [year] [name of copyright owner]"
+  *
++ * Contributor(s):
+  * If you wish your version of this file to be governed by only the CDDL or
+  * only the GPL Version 2, indicate your decision by adding "[Contributor]
+  * elects to include this software in this distribution under the [CDDL or GPL
+@@ -34,10 +38,6 @@
+  * holder.
+  */
+ 
+-/*
+- * @(#)CommandObject.java	1.10 07/05/14
+- */
+-
+ package javax.activation;
+ 
+ import java.io.IOException;
+@@ -49,7 +49,7 @@
+  * data they should operate on.  JavaBeans that don't implement
+  * this interface may be used as well.  Such commands may obtain
+  * the data using the Externalizable interface, or using an
+- * application-specific method.<p>
++ * application-specific method.
+  */
+ public interface CommandObject {
+ 
+@@ -61,6 +61,7 @@
+      *
+      * @param verb The Command Verb this object refers to.
+      * @param dh The DataHandler.
++     * @exception	IOException	for failures accessing data
+      */
+     public void setCommandContext(String verb, DataHandler dh)
+ 						throws IOException;
+diff -ubr activation-1.1.1/javax/activation/DataContentHandlerFactory.java javax.activation-api-1.2.0/javax/activation/DataContentHandlerFactory.java
+--- activation-1.1.1/javax/activation/DataContentHandlerFactory.java	2007-05-14 14:34:26.000000000 +0900
++++ javax.activation-api-1.2.0/javax/activation/DataContentHandlerFactory.java	2017-05-19 15:41:30.000000000 +0900
+@@ -1,27 +1,31 @@
+ /*
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+  *
+- * Copyright 1997-2007 Sun Microsystems, Inc. All rights reserved.
++ * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
+  *
+  * The contents of this file are subject to the terms of either the GNU
+  * General Public License Version 2 only ("GPL") or the Common Development
+  * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License. You can obtain
+- * a copy of the License at https://glassfish.dev.java.net/public/CDDL+GPL.html
+- * or glassfish/bootstrap/legal/LICENSE.txt.  See the License for the specific
++ * may not use this file except in compliance with the License.  You can
++ * obtain a copy of the License at
++ * https://oss.oracle.com/licenses/CDDL+GPL-1.1
++ * or LICENSE.txt.  See the License for the specific
+  * language governing permissions and limitations under the License.
+  *
+  * When distributing the software, include this License Header Notice in each
+- * file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+- * Sun designates this particular file as subject to the "Classpath" exception
+- * as provided by Sun in the GPL Version 2 section of the License file that
+- * accompanied this code.  If applicable, add the following below the License
+- * Header, with the fields enclosed by brackets [] replaced by your own
+- * identifying information: "Portions Copyrighted [year]
+- * [name of copyright owner]"
++ * file and include the License file at LICENSE.txt.
+  *
+- * Contributor(s):
++ * GPL Classpath Exception:
++ * Oracle designates this particular file as subject to the "Classpath"
++ * exception as provided by Oracle in the GPL Version 2 section of the License
++ * file that accompanied this code.
++ *
++ * Modifications:
++ * If applicable, add the following below the License Header, with the fields
++ * enclosed by brackets [] replaced by your own identifying information:
++ * "Portions Copyright [year] [name of copyright owner]"
+  *
++ * Contributor(s):
+  * If you wish your version of this file to be governed by only the CDDL or
+  * only the GPL Version 2, indicate your decision by adding "[Contributor]
+  * elects to include this software in this distribution under the [CDDL or GPL
+@@ -34,10 +38,6 @@
+  * holder.
+  */
+ 
+-/*
+- * @(#)DataContentHandlerFactory.java	1.7 07/05/14
+- */
+-
+ package javax.activation;
+ 
+ /**
+diff -ubr activation-1.1.1/javax/activation/DataContentHandler.java javax.activation-api-1.2.0/javax/activation/DataContentHandler.java
+--- activation-1.1.1/javax/activation/DataContentHandler.java	2007-05-14 14:34:26.000000000 +0900
++++ javax.activation-api-1.2.0/javax/activation/DataContentHandler.java	2017-05-19 15:41:34.000000000 +0900
+@@ -1,27 +1,31 @@
+ /*
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+  *
+- * Copyright 1997-2007 Sun Microsystems, Inc. All rights reserved.
++ * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
+  *
+  * The contents of this file are subject to the terms of either the GNU
+  * General Public License Version 2 only ("GPL") or the Common Development
+  * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License. You can obtain
+- * a copy of the License at https://glassfish.dev.java.net/public/CDDL+GPL.html
+- * or glassfish/bootstrap/legal/LICENSE.txt.  See the License for the specific
++ * may not use this file except in compliance with the License.  You can
++ * obtain a copy of the License at
++ * https://oss.oracle.com/licenses/CDDL+GPL-1.1
++ * or LICENSE.txt.  See the License for the specific
+  * language governing permissions and limitations under the License.
+  *
+  * When distributing the software, include this License Header Notice in each
+- * file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+- * Sun designates this particular file as subject to the "Classpath" exception
+- * as provided by Sun in the GPL Version 2 section of the License file that
+- * accompanied this code.  If applicable, add the following below the License
+- * Header, with the fields enclosed by brackets [] replaced by your own
+- * identifying information: "Portions Copyrighted [year]
+- * [name of copyright owner]"
++ * file and include the License file at LICENSE.txt.
+  *
+- * Contributor(s):
++ * GPL Classpath Exception:
++ * Oracle designates this particular file as subject to the "Classpath"
++ * exception as provided by Oracle in the GPL Version 2 section of the License
++ * file that accompanied this code.
++ *
++ * Modifications:
++ * If applicable, add the following below the License Header, with the fields
++ * enclosed by brackets [] replaced by your own identifying information:
++ * "Portions Copyright [year] [name of copyright owner]"
+  *
++ * Contributor(s):
+  * If you wish your version of this file to be governed by only the CDDL or
+  * only the GPL Version 2, indicate your decision by adding "[Contributor]
+  * elects to include this software in this distribution under the [CDDL or GPL
+@@ -34,10 +38,6 @@
+  * holder.
+  */
+ 
+-/*
+- * @(#)DataContentHandler.java	1.17 07/05/14
+- */
+-
+ package javax.activation;
+ 
+ import java.awt.datatransfer.DataFlavor;
+diff -ubr activation-1.1.1/javax/activation/DataHandler.java javax.activation-api-1.2.0/javax/activation/DataHandler.java
+--- activation-1.1.1/javax/activation/DataHandler.java	2007-05-14 14:34:26.000000000 +0900
++++ javax.activation-api-1.2.0/javax/activation/DataHandler.java	2017-05-19 15:41:32.000000000 +0900
+@@ -1,27 +1,31 @@
+ /*
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+  *
+- * Copyright 1997-2007 Sun Microsystems, Inc. All rights reserved.
++ * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
+  *
+  * The contents of this file are subject to the terms of either the GNU
+  * General Public License Version 2 only ("GPL") or the Common Development
+  * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License. You can obtain
+- * a copy of the License at https://glassfish.dev.java.net/public/CDDL+GPL.html
+- * or glassfish/bootstrap/legal/LICENSE.txt.  See the License for the specific
++ * may not use this file except in compliance with the License.  You can
++ * obtain a copy of the License at
++ * https://oss.oracle.com/licenses/CDDL+GPL-1.1
++ * or LICENSE.txt.  See the License for the specific
+  * language governing permissions and limitations under the License.
+  *
+  * When distributing the software, include this License Header Notice in each
+- * file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+- * Sun designates this particular file as subject to the "Classpath" exception
+- * as provided by Sun in the GPL Version 2 section of the License file that
+- * accompanied this code.  If applicable, add the following below the License
+- * Header, with the fields enclosed by brackets [] replaced by your own
+- * identifying information: "Portions Copyrighted [year]
+- * [name of copyright owner]"
++ * file and include the License file at LICENSE.txt.
+  *
+- * Contributor(s):
++ * GPL Classpath Exception:
++ * Oracle designates this particular file as subject to the "Classpath"
++ * exception as provided by Oracle in the GPL Version 2 section of the License
++ * file that accompanied this code.
++ *
++ * Modifications:
++ * If applicable, add the following below the License Header, with the fields
++ * enclosed by brackets [] replaced by your own identifying information:
++ * "Portions Copyright [year] [name of copyright owner]"
+  *
++ * Contributor(s):
+  * If you wish your version of this file to be governed by only the CDDL or
+  * only the GPL Version 2, indicate your decision by adding "[Contributor]
+  * elects to include this software in this distribution under the [CDDL or GPL
+@@ -34,10 +38,6 @@
+  * holder.
+  */
+ 
+-/*
+- * @(#)DataHandler.java	1.41 07/05/14
+- */
+-
+ package javax.activation;
+ 
+ import java.io.InputStream;
+@@ -339,6 +339,7 @@
+      * Otherwise, <code>null</code> is returned.
+      *
+      * @return the OutputStream
++     * @exception	IOException	for failures creating the OutputStream
+      *
+      * @see javax.activation.DataSource#getOutputStream
+      * @see javax.activation.URLDataSource
+@@ -381,7 +382,10 @@
+ 	// if it's not set, set it...
+ 	if (transferFlavors == emptyFlavors)
+ 	    transferFlavors = getDataContentHandler().getTransferDataFlavors();
+-	return transferFlavors;
++	if (transferFlavors == emptyFlavors)
++	    return transferFlavors;	// no need to clone an empty array
++	else
++	    return transferFlavors.clone();
+     }
+ 
+     /**
+diff -ubr activation-1.1.1/javax/activation/DataSource.java javax.activation-api-1.2.0/javax/activation/DataSource.java
+--- activation-1.1.1/javax/activation/DataSource.java	2007-05-14 14:34:26.000000000 +0900
++++ javax.activation-api-1.2.0/javax/activation/DataSource.java	2017-05-19 15:41:30.000000000 +0900
+@@ -1,27 +1,31 @@
+ /*
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+  *
+- * Copyright 1997-2007 Sun Microsystems, Inc. All rights reserved.
++ * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
+  *
+  * The contents of this file are subject to the terms of either the GNU
+  * General Public License Version 2 only ("GPL") or the Common Development
+  * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License. You can obtain
+- * a copy of the License at https://glassfish.dev.java.net/public/CDDL+GPL.html
+- * or glassfish/bootstrap/legal/LICENSE.txt.  See the License for the specific
++ * may not use this file except in compliance with the License.  You can
++ * obtain a copy of the License at
++ * https://oss.oracle.com/licenses/CDDL+GPL-1.1
++ * or LICENSE.txt.  See the License for the specific
+  * language governing permissions and limitations under the License.
+  *
+  * When distributing the software, include this License Header Notice in each
+- * file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+- * Sun designates this particular file as subject to the "Classpath" exception
+- * as provided by Sun in the GPL Version 2 section of the License file that
+- * accompanied this code.  If applicable, add the following below the License
+- * Header, with the fields enclosed by brackets [] replaced by your own
+- * identifying information: "Portions Copyrighted [year]
+- * [name of copyright owner]"
++ * file and include the License file at LICENSE.txt.
+  *
+- * Contributor(s):
++ * GPL Classpath Exception:
++ * Oracle designates this particular file as subject to the "Classpath"
++ * exception as provided by Oracle in the GPL Version 2 section of the License
++ * file that accompanied this code.
++ *
++ * Modifications:
++ * If applicable, add the following below the License Header, with the fields
++ * enclosed by brackets [] replaced by your own identifying information:
++ * "Portions Copyright [year] [name of copyright owner]"
+  *
++ * Contributor(s):
+  * If you wish your version of this file to be governed by only the CDDL or
+  * only the GPL Version 2, indicate your decision by adding "[Contributor]
+  * elects to include this software in this distribution under the [CDDL or GPL
+@@ -34,10 +38,6 @@
+  * holder.
+  */
+ 
+-/*
+- * @(#)DataSource.java	1.12 07/05/14
+- */
+-
+ package javax.activation;
+ 
+ import java.io.InputStream;
+@@ -62,6 +62,7 @@
+      * positioned at the beginning of the data.
+      *
+      * @return an InputStream
++     * @exception	IOException	for failures creating the InputStream
+      */
+     public InputStream getInputStream() throws IOException;
+ 
+@@ -73,6 +74,7 @@
+      * be positioned at the location the data is to be written.
+      *
+      * @return an OutputStream
++     * @exception	IOException	for failures creating the OutputStream
+      */
+     public OutputStream getOutputStream() throws IOException;
+ 
+diff -ubr activation-1.1.1/javax/activation/FileDataSource.java javax.activation-api-1.2.0/javax/activation/FileDataSource.java
+--- activation-1.1.1/javax/activation/FileDataSource.java	2007-05-14 14:34:26.000000000 +0900
++++ javax.activation-api-1.2.0/javax/activation/FileDataSource.java	2017-05-19 15:41:30.000000000 +0900
+@@ -1,27 +1,31 @@
+ /*
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+  *
+- * Copyright 1997-2007 Sun Microsystems, Inc. All rights reserved.
++ * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
+  *
+  * The contents of this file are subject to the terms of either the GNU
+  * General Public License Version 2 only ("GPL") or the Common Development
+  * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License. You can obtain
+- * a copy of the License at https://glassfish.dev.java.net/public/CDDL+GPL.html
+- * or glassfish/bootstrap/legal/LICENSE.txt.  See the License for the specific
++ * may not use this file except in compliance with the License.  You can
++ * obtain a copy of the License at
++ * https://oss.oracle.com/licenses/CDDL+GPL-1.1
++ * or LICENSE.txt.  See the License for the specific
+  * language governing permissions and limitations under the License.
+  *
+  * When distributing the software, include this License Header Notice in each
+- * file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+- * Sun designates this particular file as subject to the "Classpath" exception
+- * as provided by Sun in the GPL Version 2 section of the License file that
+- * accompanied this code.  If applicable, add the following below the License
+- * Header, with the fields enclosed by brackets [] replaced by your own
+- * identifying information: "Portions Copyrighted [year]
+- * [name of copyright owner]"
++ * file and include the License file at LICENSE.txt.
+  *
+- * Contributor(s):
++ * GPL Classpath Exception:
++ * Oracle designates this particular file as subject to the "Classpath"
++ * exception as provided by Oracle in the GPL Version 2 section of the License
++ * file that accompanied this code.
++ *
++ * Modifications:
++ * If applicable, add the following below the License Header, with the fields
++ * enclosed by brackets [] replaced by your own identifying information:
++ * "Portions Copyright [year] [name of copyright owner]"
+  *
++ * Contributor(s):
+  * If you wish your version of this file to be governed by only the CDDL or
+  * only the GPL Version 2, indicate your decision by adding "[Contributor]
+  * elects to include this software in this distribution under the [CDDL or GPL
+@@ -34,10 +38,6 @@
+  * holder.
+  */
+ 
+-/*
+- * @(#)FileDataSource.java	1.10 07/05/14
+- */
+-
+ package javax.activation;
+ 
+ import java.io.InputStream;
+diff -ubr activation-1.1.1/javax/activation/FileTypeMap.java javax.activation-api-1.2.0/javax/activation/FileTypeMap.java
+--- activation-1.1.1/javax/activation/FileTypeMap.java	2007-05-14 14:34:26.000000000 +0900
++++ javax.activation-api-1.2.0/javax/activation/FileTypeMap.java	2017-05-19 15:41:30.000000000 +0900
+@@ -1,27 +1,31 @@
+ /*
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+  *
+- * Copyright 1997-2007 Sun Microsystems, Inc. All rights reserved.
++ * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
+  *
+  * The contents of this file are subject to the terms of either the GNU
+  * General Public License Version 2 only ("GPL") or the Common Development
+  * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License. You can obtain
+- * a copy of the License at https://glassfish.dev.java.net/public/CDDL+GPL.html
+- * or glassfish/bootstrap/legal/LICENSE.txt.  See the License for the specific
++ * may not use this file except in compliance with the License.  You can
++ * obtain a copy of the License at
++ * https://oss.oracle.com/licenses/CDDL+GPL-1.1
++ * or LICENSE.txt.  See the License for the specific
+  * language governing permissions and limitations under the License.
+  *
+  * When distributing the software, include this License Header Notice in each
+- * file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+- * Sun designates this particular file as subject to the "Classpath" exception
+- * as provided by Sun in the GPL Version 2 section of the License file that
+- * accompanied this code.  If applicable, add the following below the License
+- * Header, with the fields enclosed by brackets [] replaced by your own
+- * identifying information: "Portions Copyrighted [year]
+- * [name of copyright owner]"
++ * file and include the License file at LICENSE.txt.
+  *
+- * Contributor(s):
++ * GPL Classpath Exception:
++ * Oracle designates this particular file as subject to the "Classpath"
++ * exception as provided by Oracle in the GPL Version 2 section of the License
++ * file that accompanied this code.
++ *
++ * Modifications:
++ * If applicable, add the following below the License Header, with the fields
++ * enclosed by brackets [] replaced by your own identifying information:
++ * "Portions Copyright [year] [name of copyright owner]"
+  *
++ * Contributor(s):
+  * If you wish your version of this file to be governed by only the CDDL or
+  * only the GPL Version 2, indicate your decision by adding "[Contributor]
+  * elects to include this software in this distribution under the [CDDL or GPL
+@@ -34,13 +38,11 @@
+  * holder.
+  */
+ 
+-/*
+- * @(#)FileTypeMap.java	1.9 07/05/14
+- */
+-
+ package javax.activation;
+ 
+ import java.io.File;
++import java.util.Map;
++import java.util.WeakHashMap;
+ 
+ /**
+  * The FileTypeMap is an abstract class that provides a data typing
+@@ -61,6 +63,8 @@
+ public abstract class FileTypeMap {
+ 
+     private static FileTypeMap defaultMap = null;
++    private static Map<ClassLoader,FileTypeMap> map =
++				new WeakHashMap<ClassLoader,FileTypeMap>();
+ 
+     /**
+      * The default constructor.
+@@ -91,11 +95,11 @@
+      * Sets the default FileTypeMap for the system. This instance
+      * will be returned to callers of getDefaultFileTypeMap.
+      *
+-     * @param map The FileTypeMap.
++     * @param fileTypeMap The FileTypeMap.
+      * @exception SecurityException if the caller doesn't have permission
+      *					to change the default
+      */
+-    public static void setDefaultFileTypeMap(FileTypeMap map) {
++    public static synchronized void setDefaultFileTypeMap(FileTypeMap fileTypeMap) {
+ 	SecurityManager security = System.getSecurityManager();
+ 	if (security != null) {
+ 	    try {
+@@ -103,14 +107,17 @@
+ 		security.checkSetFactory();
+ 	    } catch (SecurityException ex) {
+ 		// otherwise, we also allow it if this code and the
+-		// factory come from the same class loader (e.g.,
++		// factory come from the same (non-system) class loader (e.g.,
+ 		// the JAF classes were loaded with the applet classes).
+-		if (FileTypeMap.class.getClassLoader() !=
+-			map.getClass().getClassLoader())
++		ClassLoader cl = FileTypeMap.class.getClassLoader();
++		if (cl == null || cl.getParent() == null ||
++		    cl != fileTypeMap.getClass().getClassLoader())
+ 		    throw ex;
+ 	    }
+ 	}
+-	defaultMap = map;	
++	// remove any per-thread-context-class-loader FileTypeMap
++	map.remove(SecuritySupport.getContextClassLoader());
++	defaultMap = fileTypeMap;	
+     }
+ 
+     /**
+@@ -122,10 +129,17 @@
+      * @return The default FileTypeMap
+      * @see javax.activation.FileTypeMap#setDefaultFileTypeMap
+      */
+-    public static FileTypeMap getDefaultFileTypeMap() {
+-	// XXX - probably should be synchronized
+-	if (defaultMap == null)
+-	    defaultMap = new MimetypesFileTypeMap();
++    public static synchronized FileTypeMap getDefaultFileTypeMap() {
++	if (defaultMap != null)
+ 	return defaultMap;
++
++	// fetch per-thread-context-class-loader default
++	ClassLoader tccl = SecuritySupport.getContextClassLoader();
++	FileTypeMap def = map.get(tccl);
++	if (def == null) {
++	    def = new MimetypesFileTypeMap();
++	    map.put(tccl, def);
++	}
++	return def;
+     }
+ }
+diff -ubr activation-1.1.1/javax/activation/MailcapCommandMap.java javax.activation-api-1.2.0/javax/activation/MailcapCommandMap.java
+--- activation-1.1.1/javax/activation/MailcapCommandMap.java	2007-05-14 14:34:26.000000000 +0900
++++ javax.activation-api-1.2.0/javax/activation/MailcapCommandMap.java	2017-05-19 15:41:30.000000000 +0900
+@@ -1,27 +1,31 @@
+ /*
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+  *
+- * Copyright 1997-2007 Sun Microsystems, Inc. All rights reserved.
++ * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
+  *
+  * The contents of this file are subject to the terms of either the GNU
+  * General Public License Version 2 only ("GPL") or the Common Development
+  * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License. You can obtain
+- * a copy of the License at https://glassfish.dev.java.net/public/CDDL+GPL.html
+- * or glassfish/bootstrap/legal/LICENSE.txt.  See the License for the specific
++ * may not use this file except in compliance with the License.  You can
++ * obtain a copy of the License at
++ * https://oss.oracle.com/licenses/CDDL+GPL-1.1
++ * or LICENSE.txt.  See the License for the specific
+  * language governing permissions and limitations under the License.
+  *
+  * When distributing the software, include this License Header Notice in each
+- * file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+- * Sun designates this particular file as subject to the "Classpath" exception
+- * as provided by Sun in the GPL Version 2 section of the License file that
+- * accompanied this code.  If applicable, add the following below the License
+- * Header, with the fields enclosed by brackets [] replaced by your own
+- * identifying information: "Portions Copyrighted [year]
+- * [name of copyright owner]"
++ * file and include the License file at LICENSE.txt.
+  *
+- * Contributor(s):
++ * GPL Classpath Exception:
++ * Oracle designates this particular file as subject to the "Classpath"
++ * exception as provided by Oracle in the GPL Version 2 section of the License
++ * file that accompanied this code.
++ *
++ * Modifications:
++ * If applicable, add the following below the License Header, with the fields
++ * enclosed by brackets [] replaced by your own identifying information:
++ * "Portions Copyright [year] [name of copyright owner]"
+  *
++ * Contributor(s):
+  * If you wish your version of this file to be governed by only the CDDL or
+  * only the GPL Version 2, indicate your decision by adding "[Contributor]
+  * elects to include this software in this distribution under the [CDDL or GPL
+@@ -34,16 +38,13 @@
+  * holder.
+  */
+ 
+-/*
+- * @(#)MailcapCommandMap.java	1.42 07/05/14
+- */
+-
+-
+ package javax.activation;
+ 
+ import java.util.*;
+ import java.io.*;
+ import java.net.*;
++import java.security.AccessController;
++import java.security.PrivilegedAction;
+ import com.sun.activation.registries.MailcapFile;
+ import com.sun.activation.registries.LogSupport;
+ 
+@@ -60,16 +61,22 @@
+  * system for mailcap file entries. When requests are made
+  * to search for commands in the MailcapCommandMap, it searches  
+  * mailcap files in the following order:
+- * <p>
+  * <ol>
+  * <li> Programatically added entries to the MailcapCommandMap instance.
+  * <li> The file <code>.mailcap</code> in the user's home directory.
+- * <li> The file &lt;<i>java.home</i>&gt;<code>/lib/mailcap</code>.
++ * <li> The file <code>mailcap</code> in the Java runtime.
+  * <li> The file or resources named <code>META-INF/mailcap</code>.
+  * <li> The file or resource named <code>META-INF/mailcap.default</code>
+  * (usually found only in the <code>activation.jar</code> file).
+  * </ol>
+  * <p>
++ * (The current implementation looks for the <code>mailcap</code> file
++ * in the Java runtime in the directory <code><i>java.home</i>/conf</code>
++ * if it exists, and otherwise in the directory
++ * <code><i>java.home</i>/lib</code>, where <i>java.home</i> is the value
++ * of the "java.home" System property.  Note that the "conf" directory was
++ * introduced in JDK 9.)
++ * <p>
+  * <b>Mailcap file format:</b><p>
+  *
+  * Mailcap files must conform to the mailcap
+@@ -88,7 +95,7 @@
+  * specifically those parameter names that begin with <code>x-java-</code>.
+  * The MailcapCommandMap uses this signature to find
+  * command entries for inclusion into its registries.
+- * Parameter names with the form <code>x-java-&lt;name></code>
++ * Parameter names with the form <code>x-java-&lt;name&gt;</code>
+  * are read by the MailcapCommandMap as identifying a command
+  * with the name <i>name</i>. When the <i>name</i> is <code>
+  * content-handler</code> the MailcapCommandMap recognizes the class
+@@ -113,7 +120,7 @@
+  * following general form:<p>
+  * <code>
+  * # Comments begin with a '#' and continue to the end of the line.<br>
+- * &lt;mime type>; ; &lt;parameter list><br>
++ * &lt;mime type&gt;; ; &lt;parameter list&gt;<br>
+  * # Where a parameter list consists of one or more parameters,<br>
+  * # where parameters look like: x-java-view=com.sun.TextViewer<br>
+  * # and a parameter list looks like: <br>
+@@ -133,14 +140,33 @@
+ public class MailcapCommandMap extends CommandMap {
+     /*
+      * We manage a collection of databases, searched in order.
+-     * The default database is shared between all instances
+-     * of this class.
+-     * XXX - Can we safely share more databases between instances?
+      */
+-    private static MailcapFile defDB = null;
+     private MailcapFile[] DB;
+     private static final int PROG = 0;	// programmatically added entries
+ 
++    private static final String confDir;
++
++    static {
++	String dir = null;
++	try {
++	    dir = (String)AccessController.doPrivileged(
++		new PrivilegedAction() {
++		    public Object run() {
++			String home = System.getProperty("java.home");
++			String newdir = home + File.separator + "conf";
++			File conf = new File(newdir);
++			if (conf.exists())
++			    return newdir + File.separator;
++			else
++			    return home + File.separator + "lib" + File.separator;
++		    }
++		});
++	} catch (Exception ex) {
++	    // ignore any exceptions
++	}
++	confDir = dir;
++    }
++
+     /**
+      * The default Constructor.
+      */
+@@ -165,11 +191,11 @@
+ 	LogSupport.log("MailcapCommandMap: load SYS");
+ 	try {
+ 	    // check system's home
+-	    String system_mailcap = System.getProperty("java.home") +
+-		File.separator + "lib" + File.separator + "mailcap";
+-	    mf = loadFile(system_mailcap);
++	    if (confDir != null) {
++		mf = loadFile(confDir + "mailcap");
+ 	    if (mf != null)
+ 		dbv.add(mf);
++	    }
+ 	} catch (SecurityException ex) {}
+ 
+ 	LogSupport.log("MailcapCommandMap: load JAR");
+@@ -177,14 +203,10 @@
+ 	loadAllResources(dbv, "META-INF/mailcap");
+ 
+ 	LogSupport.log("MailcapCommandMap: load DEF");
+-	synchronized (MailcapCommandMap.class) {
+-	    // see if another instance has created this yet.
+-	    if (defDB == null)
+-		defDB = loadResource("/META-INF/mailcap.default");
+-	}
++	mf = loadResource("/META-INF/mailcap.default");
+ 
+-	if (defDB != null)
+-	    dbv.add(defDB);
++	if (mf != null)
++	    dbv.add(mf);
+ 
+ 	DB = new MailcapFile[dbv.size()];
+ 	DB = (MailcapFile[])dbv.toArray(DB);
+@@ -659,6 +681,7 @@
+      * entries that specify a view command for the specified
+      * MIME type are returned.
+      *
++     * @param	mimeType	the MIME type
+      * @return		array of native command entries
+      * @since	JAF 1.1
+      */
+diff -ubr activation-1.1.1/javax/activation/MimeType.java javax.activation-api-1.2.0/javax/activation/MimeType.java
+--- activation-1.1.1/javax/activation/MimeType.java	2007-05-14 14:34:26.000000000 +0900
++++ javax.activation-api-1.2.0/javax/activation/MimeType.java	2017-05-19 15:41:30.000000000 +0900
+@@ -1,27 +1,31 @@
+ /*
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+  *
+- * Copyright 1997-2007 Sun Microsystems, Inc. All rights reserved.
++ * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
+  *
+  * The contents of this file are subject to the terms of either the GNU
+  * General Public License Version 2 only ("GPL") or the Common Development
+  * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License. You can obtain
+- * a copy of the License at https://glassfish.dev.java.net/public/CDDL+GPL.html
+- * or glassfish/bootstrap/legal/LICENSE.txt.  See the License for the specific
++ * may not use this file except in compliance with the License.  You can
++ * obtain a copy of the License at
++ * https://oss.oracle.com/licenses/CDDL+GPL-1.1
++ * or LICENSE.txt.  See the License for the specific
+  * language governing permissions and limitations under the License.
+  *
+  * When distributing the software, include this License Header Notice in each
+- * file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+- * Sun designates this particular file as subject to the "Classpath" exception
+- * as provided by Sun in the GPL Version 2 section of the License file that
+- * accompanied this code.  If applicable, add the following below the License
+- * Header, with the fields enclosed by brackets [] replaced by your own
+- * identifying information: "Portions Copyrighted [year]
+- * [name of copyright owner]"
++ * file and include the License file at LICENSE.txt.
+  *
+- * Contributor(s):
++ * GPL Classpath Exception:
++ * Oracle designates this particular file as subject to the "Classpath"
++ * exception as provided by Oracle in the GPL Version 2 section of the License
++ * file that accompanied this code.
++ *
++ * Modifications:
++ * If applicable, add the following below the License Header, with the fields
++ * enclosed by brackets [] replaced by your own identifying information:
++ * "Portions Copyright [year] [name of copyright owner]"
+  *
++ * Contributor(s):
+  * If you wish your version of this file to be governed by only the CDDL or
+  * only the GPL Version 2, indicate your decision by adding "[Contributor]
+  * elects to include this software in this distribution under the [CDDL or GPL
+@@ -34,10 +38,6 @@
+  * holder.
+  */
+ 
+-/*
+- * @(#)MimeType.java	1.21 07/05/14
+- */
+-
+ package javax.activation;
+ 
+ import java.io.*;
+@@ -71,6 +71,7 @@
+      * Constructor that builds a MimeType from a String.
+      *
+      * @param rawdata	the MIME type string
++     * @exception	MimeTypeParseException	if the MIME type can't be parsed
+      */
+     public MimeType(String rawdata) throws MimeTypeParseException {
+         parse(rawdata);
+@@ -271,6 +272,7 @@
+      *
+      * @param rawdata	the MIME type string to compare with
+      * @return		true if they match
++     * @exception	MimeTypeParseException	if the MIME type can't be parsed
+      */
+     public boolean match(String rawdata) throws MimeTypeParseException {
+         return match(new MimeType(rawdata));
+diff -ubr activation-1.1.1/javax/activation/MimeTypeParameterList.java javax.activation-api-1.2.0/javax/activation/MimeTypeParameterList.java
+--- activation-1.1.1/javax/activation/MimeTypeParameterList.java	2007-05-14 14:34:26.000000000 +0900
++++ javax.activation-api-1.2.0/javax/activation/MimeTypeParameterList.java	2017-05-19 15:41:32.000000000 +0900
+@@ -1,27 +1,31 @@
+ /*
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+  *
+- * Copyright 1997-2007 Sun Microsystems, Inc. All rights reserved.
++ * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
+  *
+  * The contents of this file are subject to the terms of either the GNU
+  * General Public License Version 2 only ("GPL") or the Common Development
+  * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License. You can obtain
+- * a copy of the License at https://glassfish.dev.java.net/public/CDDL+GPL.html
+- * or glassfish/bootstrap/legal/LICENSE.txt.  See the License for the specific
++ * may not use this file except in compliance with the License.  You can
++ * obtain a copy of the License at
++ * https://oss.oracle.com/licenses/CDDL+GPL-1.1
++ * or LICENSE.txt.  See the License for the specific
+  * language governing permissions and limitations under the License.
+  *
+  * When distributing the software, include this License Header Notice in each
+- * file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+- * Sun designates this particular file as subject to the "Classpath" exception
+- * as provided by Sun in the GPL Version 2 section of the License file that
+- * accompanied this code.  If applicable, add the following below the License
+- * Header, with the fields enclosed by brackets [] replaced by your own
+- * identifying information: "Portions Copyrighted [year]
+- * [name of copyright owner]"
++ * file and include the License file at LICENSE.txt.
+  *
+- * Contributor(s):
++ * GPL Classpath Exception:
++ * Oracle designates this particular file as subject to the "Classpath"
++ * exception as provided by Oracle in the GPL Version 2 section of the License
++ * file that accompanied this code.
++ *
++ * Modifications:
++ * If applicable, add the following below the License Header, with the fields
++ * enclosed by brackets [] replaced by your own identifying information:
++ * "Portions Copyright [year] [name of copyright owner]"
+  *
++ * Contributor(s):
+  * If you wish your version of this file to be governed by only the CDDL or
+  * only the GPL Version 2, indicate your decision by adding "[Contributor]
+  * elects to include this software in this distribution under the [CDDL or GPL
+@@ -34,10 +38,6 @@
+  * holder.
+  */
+ 
+-/*
+- * @(#)MimeTypeParameterList.java	1.13 07/05/14
+- */
+-
+ package javax.activation;
+ 
+ import java.util.Hashtable;
+@@ -71,6 +71,7 @@
+      * Constructs a new MimeTypeParameterList with the passed in data.
+      *
+      * @param parameterList an RFC 2045, 2046 compliant parameter list.
++     * @exception	MimeTypeParseException	if the MIME type can't be parsed
+      */
+     public MimeTypeParameterList(String parameterList)
+ 					throws MimeTypeParseException {
+@@ -84,6 +85,7 @@
+      * A routine for parsing the parameter list out of a String.
+      *
+      * @param parameterList an RFC 2045, 2046 compliant parameter list.
++     * @exception	MimeTypeParseException	if the MIME type can't be parsed
+      */
+     protected void parse(String parameterList) throws MimeTypeParseException {
+ 	if (parameterList == null)
+diff -ubr activation-1.1.1/javax/activation/MimeTypeParseException.java javax.activation-api-1.2.0/javax/activation/MimeTypeParseException.java
+--- activation-1.1.1/javax/activation/MimeTypeParseException.java	2007-05-14 14:34:26.000000000 +0900
++++ javax.activation-api-1.2.0/javax/activation/MimeTypeParseException.java	2017-05-19 15:41:34.000000000 +0900
+@@ -1,27 +1,31 @@
+ /*
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+  *
+- * Copyright 1997-2007 Sun Microsystems, Inc. All rights reserved.
++ * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
+  *
+  * The contents of this file are subject to the terms of either the GNU
+  * General Public License Version 2 only ("GPL") or the Common Development
+  * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License. You can obtain
+- * a copy of the License at https://glassfish.dev.java.net/public/CDDL+GPL.html
+- * or glassfish/bootstrap/legal/LICENSE.txt.  See the License for the specific
++ * may not use this file except in compliance with the License.  You can
++ * obtain a copy of the License at
++ * https://oss.oracle.com/licenses/CDDL+GPL-1.1
++ * or LICENSE.txt.  See the License for the specific
+  * language governing permissions and limitations under the License.
+  *
+  * When distributing the software, include this License Header Notice in each
+- * file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+- * Sun designates this particular file as subject to the "Classpath" exception
+- * as provided by Sun in the GPL Version 2 section of the License file that
+- * accompanied this code.  If applicable, add the following below the License
+- * Header, with the fields enclosed by brackets [] replaced by your own
+- * identifying information: "Portions Copyrighted [year]
+- * [name of copyright owner]"
++ * file and include the License file at LICENSE.txt.
+  *
+- * Contributor(s):
++ * GPL Classpath Exception:
++ * Oracle designates this particular file as subject to the "Classpath"
++ * exception as provided by Oracle in the GPL Version 2 section of the License
++ * file that accompanied this code.
++ *
++ * Modifications:
++ * If applicable, add the following below the License Header, with the fields
++ * enclosed by brackets [] replaced by your own identifying information:
++ * "Portions Copyright [year] [name of copyright owner]"
+  *
++ * Contributor(s):
+  * If you wish your version of this file to be governed by only the CDDL or
+  * only the GPL Version 2, indicate your decision by adding "[Contributor]
+  * elects to include this software in this distribution under the [CDDL or GPL
+@@ -34,10 +38,6 @@
+  * holder.
+  */
+ 
+-/*
+- * @(#)MimeTypeParseException.java	1.7 07/05/14
+- */
+-
+ package javax.activation;
+ 
+ /**
+diff -ubr activation-1.1.1/javax/activation/MimetypesFileTypeMap.java javax.activation-api-1.2.0/javax/activation/MimetypesFileTypeMap.java
+--- activation-1.1.1/javax/activation/MimetypesFileTypeMap.java	2007-05-14 14:34:26.000000000 +0900
++++ javax.activation-api-1.2.0/javax/activation/MimetypesFileTypeMap.java	2017-05-19 15:41:32.000000000 +0900
+@@ -1,27 +1,31 @@
+ /*
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+  *
+- * Copyright 1997-2007 Sun Microsystems, Inc. All rights reserved.
++ * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
+  *
+  * The contents of this file are subject to the terms of either the GNU
+  * General Public License Version 2 only ("GPL") or the Common Development
+  * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License. You can obtain
+- * a copy of the License at https://glassfish.dev.java.net/public/CDDL+GPL.html
+- * or glassfish/bootstrap/legal/LICENSE.txt.  See the License for the specific
++ * may not use this file except in compliance with the License.  You can
++ * obtain a copy of the License at
++ * https://oss.oracle.com/licenses/CDDL+GPL-1.1
++ * or LICENSE.txt.  See the License for the specific
+  * language governing permissions and limitations under the License.
+  *
+  * When distributing the software, include this License Header Notice in each
+- * file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+- * Sun designates this particular file as subject to the "Classpath" exception
+- * as provided by Sun in the GPL Version 2 section of the License file that
+- * accompanied this code.  If applicable, add the following below the License
+- * Header, with the fields enclosed by brackets [] replaced by your own
+- * identifying information: "Portions Copyrighted [year]
+- * [name of copyright owner]"
++ * file and include the License file at LICENSE.txt.
+  *
+- * Contributor(s):
++ * GPL Classpath Exception:
++ * Oracle designates this particular file as subject to the "Classpath"
++ * exception as provided by Oracle in the GPL Version 2 section of the License
++ * file that accompanied this code.
++ *
++ * Modifications:
++ * If applicable, add the following below the License Header, with the fields
++ * enclosed by brackets [] replaced by your own identifying information:
++ * "Portions Copyright [year] [name of copyright owner]"
+  *
++ * Contributor(s):
+  * If you wish your version of this file to be governed by only the CDDL or
+  * only the GPL Version 2, indicate your decision by adding "[Contributor]
+  * elects to include this software in this distribution under the [CDDL or GPL
+@@ -34,15 +38,13 @@
+  * holder.
+  */
+ 
+-/*
+- * @(#)MimetypesFileTypeMap.java	1.18 07/05/14
+- */
+-
+ package javax.activation;
+ 
+ import java.io.*;
+ import java.net.*;
+ import java.util.*;
++import java.security.AccessController;
++import java.security.PrivilegedAction;
+ import com.sun.activation.registries.MimeTypeFile;
+ import com.sun.activation.registries.LogSupport;
+ 
+@@ -55,21 +57,27 @@
+  * system for MIME types file entries. When requests are made
+  * to search for MIME types in the MimetypesFileTypeMap, it searches  
+  * MIME types files in the following order:
+- * <p>
+  * <ol>
+  * <li> Programmatically added entries to the MimetypesFileTypeMap instance.
+  * <li> The file <code>.mime.types</code> in the user's home directory.
+- * <li> The file &lt;<i>java.home</i>&gt;<code>/lib/mime.types</code>.
++ * <li> The file <code>mime.types</code> in the Java runtime.
+  * <li> The file or resources named <code>META-INF/mime.types</code>.
+  * <li> The file or resource named <code>META-INF/mimetypes.default</code>
+  * (usually found only in the <code>activation.jar</code> file).
+  * </ol>
+  * <p>
++ * (The current implementation looks for the <code>mime.types</code> file
++ * in the Java runtime in the directory <code><i>java.home</i>/conf</code>
++ * if it exists, and otherwise in the directory
++ * <code><i>java.home</i>/lib</code>, where <i>java.home</i> is the value
++ * of the "java.home" System property.  Note that the "conf" directory was
++ * introduced in JDK 9.)
++ * <p>
+  * <b>MIME types file format:</b><p>
+  *
+  * <code>
+  * # comments begin with a '#'<br>
+- * # the format is &lt;mime type> &lt;space separated file extensions><br>
++ * # the format is &lt;mime type&gt; &lt;space separated file extensions&gt;<br>
+  * # for example:<br>
+  * text/plain    txt text TXT<br>
+  * # this would map file.txt, file.text, and file.TXT to<br>
+@@ -82,15 +90,34 @@
+ public class MimetypesFileTypeMap extends FileTypeMap {
+     /*
+      * We manage a collection of databases, searched in order.
+-     * The default database is shared between all instances
+-     * of this class.
+-     * XXX - Can we safely share more databases between instances?
+      */
+-    private static MimeTypeFile defDB = null;
+     private MimeTypeFile[] DB;
+     private static final int PROG = 0;	// programmatically added entries
+ 
+-    private static String defaultType = "application/octet-stream";
++    private static final String defaultType = "application/octet-stream";
++
++    private static final String confDir;
++
++    static {
++	String dir = null;
++	try {
++	    dir = (String)AccessController.doPrivileged(
++		new PrivilegedAction() {
++		    public Object run() {
++			String home = System.getProperty("java.home");
++			String newdir = home + File.separator + "conf";
++			File conf = new File(newdir);
++			if (conf.exists())
++			    return newdir + File.separator;
++			else
++			    return home + File.separator + "lib" + File.separator;
++		    }
++		});
++	} catch (Exception ex) {
++	    // ignore any exceptions
++	}
++	confDir = dir;
++    }
+ 
+     /**
+      * The default constructor.
+@@ -115,11 +142,11 @@
+ 	LogSupport.log("MimetypesFileTypeMap: load SYS");
+ 	try {
+ 	    // check system's home
+-	    String system_mimetypes = System.getProperty("java.home") +
+-		File.separator + "lib" + File.separator + "mime.types";
+-	    mf = loadFile(system_mimetypes);
++	    if (confDir != null) {
++		mf = loadFile(confDir + "mime.types");
+ 	    if (mf != null)
+ 		dbv.addElement(mf);
++	    }
+ 	} catch (SecurityException ex) {}
+ 
+ 	LogSupport.log("MimetypesFileTypeMap: load JAR");
+@@ -127,14 +154,10 @@
+ 	loadAllResources(dbv, "META-INF/mime.types");
+ 
+ 	LogSupport.log("MimetypesFileTypeMap: load DEF");
+-	synchronized (MimetypesFileTypeMap.class) {
+-	    // see if another instance has created this yet.
+-	    if (defDB == null)
+-		defDB = loadResource("/META-INF/mimetypes.default");
+-	}
++	mf = loadResource("/META-INF/mimetypes.default");
+ 
+-	if (defDB != null)
+-	    dbv.addElement(defDB);
++	if (mf != null)
++	    dbv.addElement(mf);
+ 
+ 	DB = new MimeTypeFile[dbv.size()];
+ 	dbv.copyInto(DB);
+@@ -261,6 +284,7 @@
+      * added from the named file.
+      *
+      * @param mimeTypeFileName	the file name
++     * @exception	IOException	for errors reading the file
+      */
+     public MimetypesFileTypeMap(String mimeTypeFileName) throws IOException {
+ 	this();
+diff -ubr activation-1.1.1/javax/activation/package.html javax.activation-api-1.2.0/javax/activation/package.html
+--- activation-1.1.1/javax/activation/package.html	2007-05-14 14:34:26.000000000 +0900
++++ javax.activation-api-1.2.0/javax/activation/package.html	2017-05-19 15:41:32.000000000 +0900
+@@ -5,27 +5,31 @@
+ 
+   DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+  
+-  Copyright 1997-2007 Sun Microsystems, Inc. All rights reserved.
++    Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
+  
+   The contents of this file are subject to the terms of either the GNU
+   General Public License Version 2 only ("GPL") or the Common Development
+   and Distribution License("CDDL") (collectively, the "License").  You
+-  may not use this file except in compliance with the License. You can obtain
+-  a copy of the License at https://glassfish.dev.java.net/public/CDDL+GPL.html
+-  or glassfish/bootstrap/legal/LICENSE.txt.  See the License for the specific
++    may not use this file except in compliance with the License.  You can
++    obtain a copy of the License at
++    https://oss.oracle.com/licenses/CDDL+GPL-1.1
++    or LICENSE.txt.  See the License for the specific
+   language governing permissions and limitations under the License.
+  
+   When distributing the software, include this License Header Notice in each
+-  file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+-  Sun designates this particular file as subject to the "Classpath" exception
+-  as provided by Sun in the GPL Version 2 section of the License file that
+-  accompanied this code.  If applicable, add the following below the License
+-  Header, with the fields enclosed by brackets [] replaced by your own
+-  identifying information: "Portions Copyrighted [year]
+-  [name of copyright owner]"
++    file and include the License file at LICENSE.txt.
+  
+-  Contributor(s):
++    GPL Classpath Exception:
++    Oracle designates this particular file as subject to the "Classpath"
++    exception as provided by Oracle in the GPL Version 2 section of the License
++    file that accompanied this code.
++
++    Modifications:
++    If applicable, add the following below the License Header, with the fields
++    enclosed by brackets [] replaced by your own identifying information:
++    "Portions Copyright [year] [name of copyright owner]"
+  
++    Contributor(s):
+   If you wish your version of this file to be governed by only the CDDL or
+   only the GPL Version 2, indicate your decision by adding "[Contributor]
+   elects to include this software in this distribution under the [CDDL or GPL
+@@ -37,8 +41,6 @@
+   only if the new code is made subject to such option by the copyright
+   holder.
+ 
+-  @(#)package.html	1.2 07/05/14
+-
+ -->
+ 
+ </HEAD>
+diff -ubr activation-1.1.1/javax/activation/SecuritySupport.java javax.activation-api-1.2.0/javax/activation/SecuritySupport.java
+--- activation-1.1.1/javax/activation/SecuritySupport.java	2007-05-14 14:34:26.000000000 +0900
++++ javax.activation-api-1.2.0/javax/activation/SecuritySupport.java	2017-05-19 15:41:30.000000000 +0900
+@@ -1,27 +1,31 @@
+ /*
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+  *
+- * Copyright 1997-2007 Sun Microsystems, Inc. All rights reserved.
++ * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
+  *
+  * The contents of this file are subject to the terms of either the GNU
+  * General Public License Version 2 only ("GPL") or the Common Development
+  * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License. You can obtain
+- * a copy of the License at https://glassfish.dev.java.net/public/CDDL+GPL.html
+- * or glassfish/bootstrap/legal/LICENSE.txt.  See the License for the specific
++ * may not use this file except in compliance with the License.  You can
++ * obtain a copy of the License at
++ * https://oss.oracle.com/licenses/CDDL+GPL-1.1
++ * or LICENSE.txt.  See the License for the specific
+  * language governing permissions and limitations under the License.
+  *
+  * When distributing the software, include this License Header Notice in each
+- * file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+- * Sun designates this particular file as subject to the "Classpath" exception
+- * as provided by Sun in the GPL Version 2 section of the License file that
+- * accompanied this code.  If applicable, add the following below the License
+- * Header, with the fields enclosed by brackets [] replaced by your own
+- * identifying information: "Portions Copyrighted [year]
+- * [name of copyright owner]"
++ * file and include the License file at LICENSE.txt.
+  *
+- * Contributor(s):
++ * GPL Classpath Exception:
++ * Oracle designates this particular file as subject to the "Classpath"
++ * exception as provided by Oracle in the GPL Version 2 section of the License
++ * file that accompanied this code.
++ *
++ * Modifications:
++ * If applicable, add the following below the License Header, with the fields
++ * enclosed by brackets [] replaced by your own identifying information:
++ * "Portions Copyright [year] [name of copyright owner]"
+  *
++ * Contributor(s):
+  * If you wish your version of this file to be governed by only the CDDL or
+  * only the GPL Version 2, indicate your decision by adding "[Contributor]
+  * elects to include this software in this distribution under the [CDDL or GPL
+@@ -34,10 +38,6 @@
+  * holder.
+  */
+ 
+-/*
+- * @(#)SecuritySupport.java	1.4 07/05/14
+- */
+-
+ package javax.activation;
+ 
+ import java.security.*;
+diff -ubr activation-1.1.1/javax/activation/UnsupportedDataTypeException.java javax.activation-api-1.2.0/javax/activation/UnsupportedDataTypeException.java
+--- activation-1.1.1/javax/activation/UnsupportedDataTypeException.java	2007-05-14 14:34:26.000000000 +0900
++++ javax.activation-api-1.2.0/javax/activation/UnsupportedDataTypeException.java	2017-05-19 15:41:30.000000000 +0900
+@@ -1,27 +1,31 @@
+ /*
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+  *
+- * Copyright 1997-2007 Sun Microsystems, Inc. All rights reserved.
++ * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
+  *
+  * The contents of this file are subject to the terms of either the GNU
+  * General Public License Version 2 only ("GPL") or the Common Development
+  * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License. You can obtain
+- * a copy of the License at https://glassfish.dev.java.net/public/CDDL+GPL.html
+- * or glassfish/bootstrap/legal/LICENSE.txt.  See the License for the specific
++ * may not use this file except in compliance with the License.  You can
++ * obtain a copy of the License at
++ * https://oss.oracle.com/licenses/CDDL+GPL-1.1
++ * or LICENSE.txt.  See the License for the specific
+  * language governing permissions and limitations under the License.
+  *
+  * When distributing the software, include this License Header Notice in each
+- * file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+- * Sun designates this particular file as subject to the "Classpath" exception
+- * as provided by Sun in the GPL Version 2 section of the License file that
+- * accompanied this code.  If applicable, add the following below the License
+- * Header, with the fields enclosed by brackets [] replaced by your own
+- * identifying information: "Portions Copyrighted [year]
+- * [name of copyright owner]"
++ * file and include the License file at LICENSE.txt.
+  *
+- * Contributor(s):
++ * GPL Classpath Exception:
++ * Oracle designates this particular file as subject to the "Classpath"
++ * exception as provided by Oracle in the GPL Version 2 section of the License
++ * file that accompanied this code.
++ *
++ * Modifications:
++ * If applicable, add the following below the License Header, with the fields
++ * enclosed by brackets [] replaced by your own identifying information:
++ * "Portions Copyright [year] [name of copyright owner]"
+  *
++ * Contributor(s):
+  * If you wish your version of this file to be governed by only the CDDL or
+  * only the GPL Version 2, indicate your decision by adding "[Contributor]
+  * elects to include this software in this distribution under the [CDDL or GPL
+@@ -34,10 +38,6 @@
+  * holder.
+  */
+ 
+-/*
+- * @(#)UnsupportedDataTypeException.java	1.10 07/05/14
+- */
+-
+ package javax.activation;
+ 
+ import java.io.IOException;
+diff -ubr activation-1.1.1/javax/activation/URLDataSource.java javax.activation-api-1.2.0/javax/activation/URLDataSource.java
+--- activation-1.1.1/javax/activation/URLDataSource.java	2007-05-14 14:34:26.000000000 +0900
++++ javax.activation-api-1.2.0/javax/activation/URLDataSource.java	2017-05-19 15:41:34.000000000 +0900
+@@ -1,27 +1,31 @@
+ /*
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+  *
+- * Copyright 1997-2007 Sun Microsystems, Inc. All rights reserved.
++ * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
+  *
+  * The contents of this file are subject to the terms of either the GNU
+  * General Public License Version 2 only ("GPL") or the Common Development
+  * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License. You can obtain
+- * a copy of the License at https://glassfish.dev.java.net/public/CDDL+GPL.html
+- * or glassfish/bootstrap/legal/LICENSE.txt.  See the License for the specific
++ * may not use this file except in compliance with the License.  You can
++ * obtain a copy of the License at
++ * https://oss.oracle.com/licenses/CDDL+GPL-1.1
++ * or LICENSE.txt.  See the License for the specific
+  * language governing permissions and limitations under the License.
+  *
+  * When distributing the software, include this License Header Notice in each
+- * file and include the License file at glassfish/bootstrap/legal/LICENSE.txt.
+- * Sun designates this particular file as subject to the "Classpath" exception
+- * as provided by Sun in the GPL Version 2 section of the License file that
+- * accompanied this code.  If applicable, add the following below the License
+- * Header, with the fields enclosed by brackets [] replaced by your own
+- * identifying information: "Portions Copyrighted [year]
+- * [name of copyright owner]"
++ * file and include the License file at LICENSE.txt.
+  *
+- * Contributor(s):
++ * GPL Classpath Exception:
++ * Oracle designates this particular file as subject to the "Classpath"
++ * exception as provided by Oracle in the GPL Version 2 section of the License
++ * file that accompanied this code.
++ *
++ * Modifications:
++ * If applicable, add the following below the License Header, with the fields
++ * enclosed by brackets [] replaced by your own identifying information:
++ * "Portions Copyright [year] [name of copyright owner]"
+  *
++ * Contributor(s):
+  * If you wish your version of this file to be governed by only the CDDL or
+  * only the GPL Version 2, indicate your decision by adding "[Contributor]
+  * elects to include this software in this distribution under the [CDDL or GPL
+@@ -34,10 +38,6 @@
+  * holder.
+  */
+ 
+-/*
+- * @(#)URLDataSource.java	1.11 07/05/14
+- */
+-
+ package javax.activation;
+ 
+ import java.net.URL;
+javax.activation-api-1.2.0/javax/activation のみに存在: .x9.swp
+javax.activation-api-1.2.0 のみに存在: META-INF
+javax.activation-api-1.2.0 のみに存在: pom.xml

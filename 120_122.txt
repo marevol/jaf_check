@@ -1,0 +1,1286 @@
+<<<javax.activation-api-1.2.0-sources.jar>>>
+javax/activation/ActivationDataFlavor.java
+javax/activation/CommandInfo.java
+javax/activation/CommandInfo.java.jdk8
+javax/activation/CommandInfo.java.jdk9
+javax/activation/CommandInfo.java.jdk9-
+javax/activation/CommandMap.java
+javax/activation/CommandObject.java
+javax/activation/DataContentHandlerFactory.java
+javax/activation/DataContentHandler.java
+javax/activation/DataHandler.java
+javax/activation/DataSource.java
+javax/activation/FileDataSource.java
+javax/activation/FileTypeMap.java
+javax/activation/MailcapCommandMap.java
+javax/activation/MimeType.java
+javax/activation/MimeTypeParameterList.java
+javax/activation/MimeTypeParseException.java
+javax/activation/MimetypesFileTypeMap.java
+javax/activation/package.html
+javax/activation/SecuritySupport.java
+javax/activation/UnsupportedDataTypeException.java
+javax/activation/URLDataSource.java
+javax/activation/.x9.swp
+META-INF/LICENSE.txt
+META-INF/MANIFEST.MF
+pom.xml
+
+<<<jakarta.activation-api-1.2.2-sources.jar>>>
+javax/activation/ActivationDataFlavor.java
+javax/activation/CommandInfo.java
+javax/activation/CommandMap.java
+javax/activation/CommandObject.java
+javax/activation/DataContentHandlerFactory.java
+javax/activation/DataContentHandler.java
+javax/activation/DataHandler.java
+javax/activation/DataSource.java
+javax/activation/FileDataSource.java
+javax/activation/FileTypeMap.java
+javax/activation/MailcapCommandMap.java
+javax/activation/MimeType.java
+javax/activation/MimeTypeParameterList.java
+javax/activation/MimeTypeParseException.java
+javax/activation/MimetypesFileTypeMap.java
+javax/activation/package.html
+javax/activation/SecuritySupport.java
+javax/activation/UnsupportedDataTypeException.java
+javax/activation/URLDataSource.java
+META-INF/LICENSE.md
+META-INF/MANIFEST.MF
+META-INF/NOTICE.md
+module-info.java
+pom.xml
+
+<<<Files: javax.activation-api-1.2.0-sources.jar - jakarta.activation-api-1.2.2-sources.jar>>>
+--- /tmp/jaf1.1915505	2021-04-08 09:36:16.199469710 +0900
++++ /tmp/jaf2.1915505	2021-04-08 09:36:16.203469716 +0900
+@@ -1,8 +1,5 @@
+ javax/activation/ActivationDataFlavor.java
+ javax/activation/CommandInfo.java
+-javax/activation/CommandInfo.java.jdk8
+-javax/activation/CommandInfo.java.jdk9
+-javax/activation/CommandInfo.java.jdk9-
+ javax/activation/CommandMap.java
+ javax/activation/CommandObject.java
+ javax/activation/DataContentHandlerFactory.java
+@@ -20,7 +17,8 @@
+ javax/activation/SecuritySupport.java
+ javax/activation/UnsupportedDataTypeException.java
+ javax/activation/URLDataSource.java
+-javax/activation/.x9.swp
+-META-INF/LICENSE.txt
++META-INF/LICENSE.md
+ META-INF/MANIFEST.MF
++META-INF/NOTICE.md
++module-info.java
+ pom.xml
+
+<<<Contents: javax.activation-api-1.2.0 - jakarta.activation-api-1.2.2>>>
+diff -ubr javax.activation-api-1.2.0/javax/activation/ActivationDataFlavor.java jakarta.activation-api-1.2.2/javax/activation/ActivationDataFlavor.java
+--- javax.activation-api-1.2.0/javax/activation/ActivationDataFlavor.java	2017-05-19 15:41:34.000000000 +0900
++++ jakarta.activation-api-1.2.2/javax/activation/ActivationDataFlavor.java	2020-02-20 18:34:30.000000000 +0900
+@@ -1,41 +1,11 @@
+ /*
+- * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
++ * Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
+  *
+- * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
++ * This program and the accompanying materials are made available under the
++ * terms of the Eclipse Distribution License v. 1.0, which is available at
++ * http://www.eclipse.org/org/documents/edl-v10.php.
+  *
+- * The contents of this file are subject to the terms of either the GNU
+- * General Public License Version 2 only ("GPL") or the Common Development
+- * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License.  You can
+- * obtain a copy of the License at
+- * https://oss.oracle.com/licenses/CDDL+GPL-1.1
+- * or LICENSE.txt.  See the License for the specific
+- * language governing permissions and limitations under the License.
+- *
+- * When distributing the software, include this License Header Notice in each
+- * file and include the License file at LICENSE.txt.
+- *
+- * GPL Classpath Exception:
+- * Oracle designates this particular file as subject to the "Classpath"
+- * exception as provided by Oracle in the GPL Version 2 section of the License
+- * file that accompanied this code.
+- *
+- * Modifications:
+- * If applicable, add the following below the License Header, with the fields
+- * enclosed by brackets [] replaced by your own identifying information:
+- * "Portions Copyright [year] [name of copyright owner]"
+- *
+- * Contributor(s):
+- * If you wish your version of this file to be governed by only the CDDL or
+- * only the GPL Version 2, indicate your decision by adding "[Contributor]
+- * elects to include this software in this distribution under the [CDDL or GPL
+- * Version 2] license."  If you don't indicate a single choice of license, a
+- * recipient has the option to distribute your version of this file under
+- * either the CDDL, the GPL Version 2 or to extend the choice of license to
+- * its licensees as provided above.  However, if you add GPL Version 2 code
+- * and therefore, elected the GPL Version 2 license, then the option applies
+- * only if the new code is made subject to such option by the copyright
+- * holder.
++ * SPDX-License-Identifier: BSD-3-Clause
+  */
+ 
+ package javax.activation;
+@@ -204,8 +174,8 @@
+      * to the MIME type of this DataFlavor. <p>
+      *
+      * ActivationDataFlavor delegates the comparison of MIME types to
+-     * the MimeType class included as part of the JavaBeans Activation
+-     * Framework. This provides a more robust comparison than is normally
++     * the MimeType class included as part of Jakarta Activation.
++     * This provides a more robust comparison than is normally
+      * available in the DataFlavor class.
+      *
+      * @param mimeType	the MIME type
+diff -ubr javax.activation-api-1.2.0/javax/activation/CommandInfo.java jakarta.activation-api-1.2.2/javax/activation/CommandInfo.java
+--- javax.activation-api-1.2.0/javax/activation/CommandInfo.java	2017-05-19 15:41:34.000000000 +0900
++++ jakarta.activation-api-1.2.2/javax/activation/CommandInfo.java	2020-02-20 18:34:30.000000000 +0900
+@@ -1,41 +1,11 @@
+ /*
+- * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
++ * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+  *
+- * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
++ * This program and the accompanying materials are made available under the
++ * terms of the Eclipse Distribution License v. 1.0, which is available at
++ * http://www.eclipse.org/org/documents/edl-v10.php.
+  *
+- * The contents of this file are subject to the terms of either the GNU
+- * General Public License Version 2 only ("GPL") or the Common Development
+- * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License.  You can
+- * obtain a copy of the License at
+- * https://oss.oracle.com/licenses/CDDL+GPL-1.1
+- * or LICENSE.txt.  See the License for the specific
+- * language governing permissions and limitations under the License.
+- *
+- * When distributing the software, include this License Header Notice in each
+- * file and include the License file at LICENSE.txt.
+- *
+- * GPL Classpath Exception:
+- * Oracle designates this particular file as subject to the "Classpath"
+- * exception as provided by Oracle in the GPL Version 2 section of the License
+- * file that accompanied this code.
+- *
+- * Modifications:
+- * If applicable, add the following below the License Header, with the fields
+- * enclosed by brackets [] replaced by your own identifying information:
+- * "Portions Copyright [year] [name of copyright owner]"
+- *
+- * Contributor(s):
+- * If you wish your version of this file to be governed by only the CDDL or
+- * only the GPL Version 2, indicate your decision by adding "[Contributor]
+- * elects to include this software in this distribution under the [CDDL or GPL
+- * Version 2] license."  If you don't indicate a single choice of license, a
+- * recipient has the option to distribute your version of this file under
+- * either the CDDL, the GPL Version 2 or to extend the choice of license to
+- * its licensees as provided above.  However, if you add GPL Version 2 code
+- * and therefore, elected the GPL Version 2 license, then the option applies
+- * only if the new code is made subject to such option by the copyright
+- * holder.
++ * SPDX-License-Identifier: BSD-3-Clause
+  */
+ 
+ package javax.activation;
+javax.activation-api-1.2.0/javax/activation のみに存在: CommandInfo.java.jdk8
+javax.activation-api-1.2.0/javax/activation のみに存在: CommandInfo.java.jdk9
+javax.activation-api-1.2.0/javax/activation のみに存在: CommandInfo.java.jdk9-
+diff -ubr javax.activation-api-1.2.0/javax/activation/CommandMap.java jakarta.activation-api-1.2.2/javax/activation/CommandMap.java
+--- javax.activation-api-1.2.0/javax/activation/CommandMap.java	2017-05-19 15:41:32.000000000 +0900
++++ jakarta.activation-api-1.2.2/javax/activation/CommandMap.java	2020-02-20 18:34:30.000000000 +0900
+@@ -1,41 +1,11 @@
+ /*
+- * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
++ * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+  *
+- * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
++ * This program and the accompanying materials are made available under the
++ * terms of the Eclipse Distribution License v. 1.0, which is available at
++ * http://www.eclipse.org/org/documents/edl-v10.php.
+  *
+- * The contents of this file are subject to the terms of either the GNU
+- * General Public License Version 2 only ("GPL") or the Common Development
+- * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License.  You can
+- * obtain a copy of the License at
+- * https://oss.oracle.com/licenses/CDDL+GPL-1.1
+- * or LICENSE.txt.  See the License for the specific
+- * language governing permissions and limitations under the License.
+- *
+- * When distributing the software, include this License Header Notice in each
+- * file and include the License file at LICENSE.txt.
+- *
+- * GPL Classpath Exception:
+- * Oracle designates this particular file as subject to the "Classpath"
+- * exception as provided by Oracle in the GPL Version 2 section of the License
+- * file that accompanied this code.
+- *
+- * Modifications:
+- * If applicable, add the following below the License Header, with the fields
+- * enclosed by brackets [] replaced by your own identifying information:
+- * "Portions Copyright [year] [name of copyright owner]"
+- *
+- * Contributor(s):
+- * If you wish your version of this file to be governed by only the CDDL or
+- * only the GPL Version 2, indicate your decision by adding "[Contributor]
+- * elects to include this software in this distribution under the [CDDL or GPL
+- * Version 2] license."  If you don't indicate a single choice of license, a
+- * recipient has the option to distribute your version of this file under
+- * either the CDDL, the GPL Version 2 or to extend the choice of license to
+- * its licensees as provided above.  However, if you add GPL Version 2 code
+- * and therefore, elected the GPL Version 2 license, then the option applies
+- * only if the new code is made subject to such option by the copyright
+- * holder.
++ * SPDX-License-Identifier: BSD-3-Clause
+  */
+ 
+ package javax.activation;
+diff -ubr javax.activation-api-1.2.0/javax/activation/CommandObject.java jakarta.activation-api-1.2.2/javax/activation/CommandObject.java
+--- javax.activation-api-1.2.0/javax/activation/CommandObject.java	2017-05-19 15:41:32.000000000 +0900
++++ jakarta.activation-api-1.2.2/javax/activation/CommandObject.java	2020-02-20 18:34:30.000000000 +0900
+@@ -1,41 +1,11 @@
+ /*
+- * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
++ * Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
+  *
+- * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
++ * This program and the accompanying materials are made available under the
++ * terms of the Eclipse Distribution License v. 1.0, which is available at
++ * http://www.eclipse.org/org/documents/edl-v10.php.
+  *
+- * The contents of this file are subject to the terms of either the GNU
+- * General Public License Version 2 only ("GPL") or the Common Development
+- * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License.  You can
+- * obtain a copy of the License at
+- * https://oss.oracle.com/licenses/CDDL+GPL-1.1
+- * or LICENSE.txt.  See the License for the specific
+- * language governing permissions and limitations under the License.
+- *
+- * When distributing the software, include this License Header Notice in each
+- * file and include the License file at LICENSE.txt.
+- *
+- * GPL Classpath Exception:
+- * Oracle designates this particular file as subject to the "Classpath"
+- * exception as provided by Oracle in the GPL Version 2 section of the License
+- * file that accompanied this code.
+- *
+- * Modifications:
+- * If applicable, add the following below the License Header, with the fields
+- * enclosed by brackets [] replaced by your own identifying information:
+- * "Portions Copyright [year] [name of copyright owner]"
+- *
+- * Contributor(s):
+- * If you wish your version of this file to be governed by only the CDDL or
+- * only the GPL Version 2, indicate your decision by adding "[Contributor]
+- * elects to include this software in this distribution under the [CDDL or GPL
+- * Version 2] license."  If you don't indicate a single choice of license, a
+- * recipient has the option to distribute your version of this file under
+- * either the CDDL, the GPL Version 2 or to extend the choice of license to
+- * its licensees as provided above.  However, if you add GPL Version 2 code
+- * and therefore, elected the GPL Version 2 license, then the option applies
+- * only if the new code is made subject to such option by the copyright
+- * holder.
++ * SPDX-License-Identifier: BSD-3-Clause
+  */
+ 
+ package javax.activation;
+@@ -43,7 +13,7 @@
+ import java.io.IOException;
+ 
+ /**
+- * JavaBeans components that are Activation Framework aware implement
++ * JavaBeans components that are Jakarta Activation aware implement
+  * this interface to find out which command verb they're being asked
+  * to perform, and to obtain the DataHandler representing the
+  * data they should operate on.  JavaBeans that don't implement
+diff -ubr javax.activation-api-1.2.0/javax/activation/DataContentHandlerFactory.java jakarta.activation-api-1.2.2/javax/activation/DataContentHandlerFactory.java
+--- javax.activation-api-1.2.0/javax/activation/DataContentHandlerFactory.java	2017-05-19 15:41:30.000000000 +0900
++++ jakarta.activation-api-1.2.2/javax/activation/DataContentHandlerFactory.java	2020-02-20 18:34:30.000000000 +0900
+@@ -1,41 +1,11 @@
+ /*
+- * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
++ * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+  *
+- * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
++ * This program and the accompanying materials are made available under the
++ * terms of the Eclipse Distribution License v. 1.0, which is available at
++ * http://www.eclipse.org/org/documents/edl-v10.php.
+  *
+- * The contents of this file are subject to the terms of either the GNU
+- * General Public License Version 2 only ("GPL") or the Common Development
+- * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License.  You can
+- * obtain a copy of the License at
+- * https://oss.oracle.com/licenses/CDDL+GPL-1.1
+- * or LICENSE.txt.  See the License for the specific
+- * language governing permissions and limitations under the License.
+- *
+- * When distributing the software, include this License Header Notice in each
+- * file and include the License file at LICENSE.txt.
+- *
+- * GPL Classpath Exception:
+- * Oracle designates this particular file as subject to the "Classpath"
+- * exception as provided by Oracle in the GPL Version 2 section of the License
+- * file that accompanied this code.
+- *
+- * Modifications:
+- * If applicable, add the following below the License Header, with the fields
+- * enclosed by brackets [] replaced by your own identifying information:
+- * "Portions Copyright [year] [name of copyright owner]"
+- *
+- * Contributor(s):
+- * If you wish your version of this file to be governed by only the CDDL or
+- * only the GPL Version 2, indicate your decision by adding "[Contributor]
+- * elects to include this software in this distribution under the [CDDL or GPL
+- * Version 2] license."  If you don't indicate a single choice of license, a
+- * recipient has the option to distribute your version of this file under
+- * either the CDDL, the GPL Version 2 or to extend the choice of license to
+- * its licensees as provided above.  However, if you add GPL Version 2 code
+- * and therefore, elected the GPL Version 2 license, then the option applies
+- * only if the new code is made subject to such option by the copyright
+- * holder.
++ * SPDX-License-Identifier: BSD-3-Clause
+  */
+ 
+ package javax.activation;
+diff -ubr javax.activation-api-1.2.0/javax/activation/DataContentHandler.java jakarta.activation-api-1.2.2/javax/activation/DataContentHandler.java
+--- javax.activation-api-1.2.0/javax/activation/DataContentHandler.java	2017-05-19 15:41:34.000000000 +0900
++++ jakarta.activation-api-1.2.2/javax/activation/DataContentHandler.java	2020-02-20 18:34:30.000000000 +0900
+@@ -1,41 +1,11 @@
+ /*
+- * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
++ * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+  *
+- * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
++ * This program and the accompanying materials are made available under the
++ * terms of the Eclipse Distribution License v. 1.0, which is available at
++ * http://www.eclipse.org/org/documents/edl-v10.php.
+  *
+- * The contents of this file are subject to the terms of either the GNU
+- * General Public License Version 2 only ("GPL") or the Common Development
+- * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License.  You can
+- * obtain a copy of the License at
+- * https://oss.oracle.com/licenses/CDDL+GPL-1.1
+- * or LICENSE.txt.  See the License for the specific
+- * language governing permissions and limitations under the License.
+- *
+- * When distributing the software, include this License Header Notice in each
+- * file and include the License file at LICENSE.txt.
+- *
+- * GPL Classpath Exception:
+- * Oracle designates this particular file as subject to the "Classpath"
+- * exception as provided by Oracle in the GPL Version 2 section of the License
+- * file that accompanied this code.
+- *
+- * Modifications:
+- * If applicable, add the following below the License Header, with the fields
+- * enclosed by brackets [] replaced by your own identifying information:
+- * "Portions Copyright [year] [name of copyright owner]"
+- *
+- * Contributor(s):
+- * If you wish your version of this file to be governed by only the CDDL or
+- * only the GPL Version 2, indicate your decision by adding "[Contributor]
+- * elects to include this software in this distribution under the [CDDL or GPL
+- * Version 2] license."  If you don't indicate a single choice of license, a
+- * recipient has the option to distribute your version of this file under
+- * either the CDDL, the GPL Version 2 or to extend the choice of license to
+- * its licensees as provided above.  However, if you add GPL Version 2 code
+- * and therefore, elected the GPL Version 2 license, then the option applies
+- * only if the new code is made subject to such option by the copyright
+- * holder.
++ * SPDX-License-Identifier: BSD-3-Clause
+  */
+ 
+ package javax.activation;
+diff -ubr javax.activation-api-1.2.0/javax/activation/DataHandler.java jakarta.activation-api-1.2.2/javax/activation/DataHandler.java
+--- javax.activation-api-1.2.0/javax/activation/DataHandler.java	2017-05-19 15:41:32.000000000 +0900
++++ jakarta.activation-api-1.2.2/javax/activation/DataHandler.java	2020-02-20 18:34:30.000000000 +0900
+@@ -1,41 +1,11 @@
+ /*
+- * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
++ * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+  *
+- * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
++ * This program and the accompanying materials are made available under the
++ * terms of the Eclipse Distribution License v. 1.0, which is available at
++ * http://www.eclipse.org/org/documents/edl-v10.php.
+  *
+- * The contents of this file are subject to the terms of either the GNU
+- * General Public License Version 2 only ("GPL") or the Common Development
+- * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License.  You can
+- * obtain a copy of the License at
+- * https://oss.oracle.com/licenses/CDDL+GPL-1.1
+- * or LICENSE.txt.  See the License for the specific
+- * language governing permissions and limitations under the License.
+- *
+- * When distributing the software, include this License Header Notice in each
+- * file and include the License file at LICENSE.txt.
+- *
+- * GPL Classpath Exception:
+- * Oracle designates this particular file as subject to the "Classpath"
+- * exception as provided by Oracle in the GPL Version 2 section of the License
+- * file that accompanied this code.
+- *
+- * Modifications:
+- * If applicable, add the following below the License Header, with the fields
+- * enclosed by brackets [] replaced by your own identifying information:
+- * "Portions Copyright [year] [name of copyright owner]"
+- *
+- * Contributor(s):
+- * If you wish your version of this file to be governed by only the CDDL or
+- * only the GPL Version 2, indicate your decision by adding "[Contributor]
+- * elects to include this software in this distribution under the [CDDL or GPL
+- * Version 2] license."  If you don't indicate a single choice of license, a
+- * recipient has the option to distribute your version of this file under
+- * either the CDDL, the GPL Version 2 or to extend the choice of license to
+- * its licensees as provided above.  However, if you add GPL Version 2 code
+- * and therefore, elected the GPL Version 2 license, then the option applies
+- * only if the new code is made subject to such option by the copyright
+- * holder.
++ * SPDX-License-Identifier: BSD-3-Clause
+  */
+ 
+ package javax.activation;
+diff -ubr javax.activation-api-1.2.0/javax/activation/DataSource.java jakarta.activation-api-1.2.2/javax/activation/DataSource.java
+--- javax.activation-api-1.2.0/javax/activation/DataSource.java	2017-05-19 15:41:30.000000000 +0900
++++ jakarta.activation-api-1.2.2/javax/activation/DataSource.java	2020-02-20 18:34:30.000000000 +0900
+@@ -1,41 +1,11 @@
+ /*
+- * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
++ * Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
+  *
+- * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
++ * This program and the accompanying materials are made available under the
++ * terms of the Eclipse Distribution License v. 1.0, which is available at
++ * http://www.eclipse.org/org/documents/edl-v10.php.
+  *
+- * The contents of this file are subject to the terms of either the GNU
+- * General Public License Version 2 only ("GPL") or the Common Development
+- * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License.  You can
+- * obtain a copy of the License at
+- * https://oss.oracle.com/licenses/CDDL+GPL-1.1
+- * or LICENSE.txt.  See the License for the specific
+- * language governing permissions and limitations under the License.
+- *
+- * When distributing the software, include this License Header Notice in each
+- * file and include the License file at LICENSE.txt.
+- *
+- * GPL Classpath Exception:
+- * Oracle designates this particular file as subject to the "Classpath"
+- * exception as provided by Oracle in the GPL Version 2 section of the License
+- * file that accompanied this code.
+- *
+- * Modifications:
+- * If applicable, add the following below the License Header, with the fields
+- * enclosed by brackets [] replaced by your own identifying information:
+- * "Portions Copyright [year] [name of copyright owner]"
+- *
+- * Contributor(s):
+- * If you wish your version of this file to be governed by only the CDDL or
+- * only the GPL Version 2, indicate your decision by adding "[Contributor]
+- * elects to include this software in this distribution under the [CDDL or GPL
+- * Version 2] license."  If you don't indicate a single choice of license, a
+- * recipient has the option to distribute your version of this file under
+- * either the CDDL, the GPL Version 2 or to extend the choice of license to
+- * its licensees as provided above.  However, if you add GPL Version 2 code
+- * and therefore, elected the GPL Version 2 license, then the option applies
+- * only if the new code is made subject to such option by the copyright
+- * holder.
++ * SPDX-License-Identifier: BSD-3-Clause
+  */
+ 
+ package javax.activation;
+@@ -45,7 +15,7 @@
+ import java.io.IOException;
+ 
+ /**
+- * The DataSource interface provides the JavaBeans Activation Framework
++ * The DataSource interface provides Jakarta Activation
+  * with an abstraction of an arbitrary collection of data.  It
+  * provides a type for that data as well as access
+  * to it in the form of <code>InputStreams</code> and
+diff -ubr javax.activation-api-1.2.0/javax/activation/FileDataSource.java jakarta.activation-api-1.2.2/javax/activation/FileDataSource.java
+--- javax.activation-api-1.2.0/javax/activation/FileDataSource.java	2017-05-19 15:41:30.000000000 +0900
++++ jakarta.activation-api-1.2.2/javax/activation/FileDataSource.java	2020-02-20 18:34:30.000000000 +0900
+@@ -1,41 +1,11 @@
+ /*
+- * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
++ * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+  *
+- * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
++ * This program and the accompanying materials are made available under the
++ * terms of the Eclipse Distribution License v. 1.0, which is available at
++ * http://www.eclipse.org/org/documents/edl-v10.php.
+  *
+- * The contents of this file are subject to the terms of either the GNU
+- * General Public License Version 2 only ("GPL") or the Common Development
+- * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License.  You can
+- * obtain a copy of the License at
+- * https://oss.oracle.com/licenses/CDDL+GPL-1.1
+- * or LICENSE.txt.  See the License for the specific
+- * language governing permissions and limitations under the License.
+- *
+- * When distributing the software, include this License Header Notice in each
+- * file and include the License file at LICENSE.txt.
+- *
+- * GPL Classpath Exception:
+- * Oracle designates this particular file as subject to the "Classpath"
+- * exception as provided by Oracle in the GPL Version 2 section of the License
+- * file that accompanied this code.
+- *
+- * Modifications:
+- * If applicable, add the following below the License Header, with the fields
+- * enclosed by brackets [] replaced by your own identifying information:
+- * "Portions Copyright [year] [name of copyright owner]"
+- *
+- * Contributor(s):
+- * If you wish your version of this file to be governed by only the CDDL or
+- * only the GPL Version 2, indicate your decision by adding "[Contributor]
+- * elects to include this software in this distribution under the [CDDL or GPL
+- * Version 2] license."  If you don't indicate a single choice of license, a
+- * recipient has the option to distribute your version of this file under
+- * either the CDDL, the GPL Version 2 or to extend the choice of license to
+- * its licensees as provided above.  However, if you add GPL Version 2 code
+- * and therefore, elected the GPL Version 2 license, then the option applies
+- * only if the new code is made subject to such option by the copyright
+- * holder.
++ * SPDX-License-Identifier: BSD-3-Clause
+  */
+ 
+ package javax.activation;
+diff -ubr javax.activation-api-1.2.0/javax/activation/FileTypeMap.java jakarta.activation-api-1.2.2/javax/activation/FileTypeMap.java
+--- javax.activation-api-1.2.0/javax/activation/FileTypeMap.java	2017-05-19 15:41:30.000000000 +0900
++++ jakarta.activation-api-1.2.2/javax/activation/FileTypeMap.java	2020-02-20 18:34:30.000000000 +0900
+@@ -1,41 +1,11 @@
+ /*
+- * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
++ * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+  *
+- * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
++ * This program and the accompanying materials are made available under the
++ * terms of the Eclipse Distribution License v. 1.0, which is available at
++ * http://www.eclipse.org/org/documents/edl-v10.php.
+  *
+- * The contents of this file are subject to the terms of either the GNU
+- * General Public License Version 2 only ("GPL") or the Common Development
+- * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License.  You can
+- * obtain a copy of the License at
+- * https://oss.oracle.com/licenses/CDDL+GPL-1.1
+- * or LICENSE.txt.  See the License for the specific
+- * language governing permissions and limitations under the License.
+- *
+- * When distributing the software, include this License Header Notice in each
+- * file and include the License file at LICENSE.txt.
+- *
+- * GPL Classpath Exception:
+- * Oracle designates this particular file as subject to the "Classpath"
+- * exception as provided by Oracle in the GPL Version 2 section of the License
+- * file that accompanied this code.
+- *
+- * Modifications:
+- * If applicable, add the following below the License Header, with the fields
+- * enclosed by brackets [] replaced by your own identifying information:
+- * "Portions Copyright [year] [name of copyright owner]"
+- *
+- * Contributor(s):
+- * If you wish your version of this file to be governed by only the CDDL or
+- * only the GPL Version 2, indicate your decision by adding "[Contributor]
+- * elects to include this software in this distribution under the [CDDL or GPL
+- * Version 2] license."  If you don't indicate a single choice of license, a
+- * recipient has the option to distribute your version of this file under
+- * either the CDDL, the GPL Version 2 or to extend the choice of license to
+- * its licensees as provided above.  However, if you add GPL Version 2 code
+- * and therefore, elected the GPL Version 2 license, then the option applies
+- * only if the new code is made subject to such option by the copyright
+- * holder.
++ * SPDX-License-Identifier: BSD-3-Clause
+  */
+ 
+ package javax.activation;
+diff -ubr javax.activation-api-1.2.0/javax/activation/MailcapCommandMap.java jakarta.activation-api-1.2.2/javax/activation/MailcapCommandMap.java
+--- javax.activation-api-1.2.0/javax/activation/MailcapCommandMap.java	2017-05-19 15:41:30.000000000 +0900
++++ jakarta.activation-api-1.2.2/javax/activation/MailcapCommandMap.java	2020-02-20 18:34:30.000000000 +0900
+@@ -1,41 +1,11 @@
+ /*
+- * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
++ * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+  *
+- * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
++ * This program and the accompanying materials are made available under the
++ * terms of the Eclipse Distribution License v. 1.0, which is available at
++ * http://www.eclipse.org/org/documents/edl-v10.php.
+  *
+- * The contents of this file are subject to the terms of either the GNU
+- * General Public License Version 2 only ("GPL") or the Common Development
+- * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License.  You can
+- * obtain a copy of the License at
+- * https://oss.oracle.com/licenses/CDDL+GPL-1.1
+- * or LICENSE.txt.  See the License for the specific
+- * language governing permissions and limitations under the License.
+- *
+- * When distributing the software, include this License Header Notice in each
+- * file and include the License file at LICENSE.txt.
+- *
+- * GPL Classpath Exception:
+- * Oracle designates this particular file as subject to the "Classpath"
+- * exception as provided by Oracle in the GPL Version 2 section of the License
+- * file that accompanied this code.
+- *
+- * Modifications:
+- * If applicable, add the following below the License Header, with the fields
+- * enclosed by brackets [] replaced by your own identifying information:
+- * "Portions Copyright [year] [name of copyright owner]"
+- *
+- * Contributor(s):
+- * If you wish your version of this file to be governed by only the CDDL or
+- * only the GPL Version 2, indicate your decision by adding "[Contributor]
+- * elects to include this software in this distribution under the [CDDL or GPL
+- * Version 2] license."  If you don't indicate a single choice of license, a
+- * recipient has the option to distribute your version of this file under
+- * either the CDDL, the GPL Version 2 or to extend the choice of license to
+- * its licensees as provided above.  However, if you add GPL Version 2 code
+- * and therefore, elected the GPL Version 2 license, then the option applies
+- * only if the new code is made subject to such option by the copyright
+- * holder.
++ * SPDX-License-Identifier: BSD-3-Clause
+  */
+ 
+ package javax.activation;
+diff -ubr javax.activation-api-1.2.0/javax/activation/MimeType.java jakarta.activation-api-1.2.2/javax/activation/MimeType.java
+--- javax.activation-api-1.2.0/javax/activation/MimeType.java	2017-05-19 15:41:30.000000000 +0900
++++ jakarta.activation-api-1.2.2/javax/activation/MimeType.java	2020-02-20 18:34:30.000000000 +0900
+@@ -1,41 +1,11 @@
+ /*
+- * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
++ * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+  *
+- * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
++ * This program and the accompanying materials are made available under the
++ * terms of the Eclipse Distribution License v. 1.0, which is available at
++ * http://www.eclipse.org/org/documents/edl-v10.php.
+  *
+- * The contents of this file are subject to the terms of either the GNU
+- * General Public License Version 2 only ("GPL") or the Common Development
+- * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License.  You can
+- * obtain a copy of the License at
+- * https://oss.oracle.com/licenses/CDDL+GPL-1.1
+- * or LICENSE.txt.  See the License for the specific
+- * language governing permissions and limitations under the License.
+- *
+- * When distributing the software, include this License Header Notice in each
+- * file and include the License file at LICENSE.txt.
+- *
+- * GPL Classpath Exception:
+- * Oracle designates this particular file as subject to the "Classpath"
+- * exception as provided by Oracle in the GPL Version 2 section of the License
+- * file that accompanied this code.
+- *
+- * Modifications:
+- * If applicable, add the following below the License Header, with the fields
+- * enclosed by brackets [] replaced by your own identifying information:
+- * "Portions Copyright [year] [name of copyright owner]"
+- *
+- * Contributor(s):
+- * If you wish your version of this file to be governed by only the CDDL or
+- * only the GPL Version 2, indicate your decision by adding "[Contributor]
+- * elects to include this software in this distribution under the [CDDL or GPL
+- * Version 2] license."  If you don't indicate a single choice of license, a
+- * recipient has the option to distribute your version of this file under
+- * either the CDDL, the GPL Version 2 or to extend the choice of license to
+- * its licensees as provided above.  However, if you add GPL Version 2 code
+- * and therefore, elected the GPL Version 2 license, then the option applies
+- * only if the new code is made subject to such option by the copyright
+- * holder.
++ * SPDX-License-Identifier: BSD-3-Clause
+  */
+ 
+ package javax.activation;
+diff -ubr javax.activation-api-1.2.0/javax/activation/MimeTypeParameterList.java jakarta.activation-api-1.2.2/javax/activation/MimeTypeParameterList.java
+--- javax.activation-api-1.2.0/javax/activation/MimeTypeParameterList.java	2017-05-19 15:41:32.000000000 +0900
++++ jakarta.activation-api-1.2.2/javax/activation/MimeTypeParameterList.java	2020-02-20 18:34:30.000000000 +0900
+@@ -1,41 +1,11 @@
+ /*
+- * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
++ * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+  *
+- * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
++ * This program and the accompanying materials are made available under the
++ * terms of the Eclipse Distribution License v. 1.0, which is available at
++ * http://www.eclipse.org/org/documents/edl-v10.php.
+  *
+- * The contents of this file are subject to the terms of either the GNU
+- * General Public License Version 2 only ("GPL") or the Common Development
+- * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License.  You can
+- * obtain a copy of the License at
+- * https://oss.oracle.com/licenses/CDDL+GPL-1.1
+- * or LICENSE.txt.  See the License for the specific
+- * language governing permissions and limitations under the License.
+- *
+- * When distributing the software, include this License Header Notice in each
+- * file and include the License file at LICENSE.txt.
+- *
+- * GPL Classpath Exception:
+- * Oracle designates this particular file as subject to the "Classpath"
+- * exception as provided by Oracle in the GPL Version 2 section of the License
+- * file that accompanied this code.
+- *
+- * Modifications:
+- * If applicable, add the following below the License Header, with the fields
+- * enclosed by brackets [] replaced by your own identifying information:
+- * "Portions Copyright [year] [name of copyright owner]"
+- *
+- * Contributor(s):
+- * If you wish your version of this file to be governed by only the CDDL or
+- * only the GPL Version 2, indicate your decision by adding "[Contributor]
+- * elects to include this software in this distribution under the [CDDL or GPL
+- * Version 2] license."  If you don't indicate a single choice of license, a
+- * recipient has the option to distribute your version of this file under
+- * either the CDDL, the GPL Version 2 or to extend the choice of license to
+- * its licensees as provided above.  However, if you add GPL Version 2 code
+- * and therefore, elected the GPL Version 2 license, then the option applies
+- * only if the new code is made subject to such option by the copyright
+- * holder.
++ * SPDX-License-Identifier: BSD-3-Clause
+  */
+ 
+ package javax.activation;
+diff -ubr javax.activation-api-1.2.0/javax/activation/MimeTypeParseException.java jakarta.activation-api-1.2.2/javax/activation/MimeTypeParseException.java
+--- javax.activation-api-1.2.0/javax/activation/MimeTypeParseException.java	2017-05-19 15:41:34.000000000 +0900
++++ jakarta.activation-api-1.2.2/javax/activation/MimeTypeParseException.java	2020-02-20 18:34:30.000000000 +0900
+@@ -1,41 +1,11 @@
+ /*
+- * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
++ * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+  *
+- * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
++ * This program and the accompanying materials are made available under the
++ * terms of the Eclipse Distribution License v. 1.0, which is available at
++ * http://www.eclipse.org/org/documents/edl-v10.php.
+  *
+- * The contents of this file are subject to the terms of either the GNU
+- * General Public License Version 2 only ("GPL") or the Common Development
+- * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License.  You can
+- * obtain a copy of the License at
+- * https://oss.oracle.com/licenses/CDDL+GPL-1.1
+- * or LICENSE.txt.  See the License for the specific
+- * language governing permissions and limitations under the License.
+- *
+- * When distributing the software, include this License Header Notice in each
+- * file and include the License file at LICENSE.txt.
+- *
+- * GPL Classpath Exception:
+- * Oracle designates this particular file as subject to the "Classpath"
+- * exception as provided by Oracle in the GPL Version 2 section of the License
+- * file that accompanied this code.
+- *
+- * Modifications:
+- * If applicable, add the following below the License Header, with the fields
+- * enclosed by brackets [] replaced by your own identifying information:
+- * "Portions Copyright [year] [name of copyright owner]"
+- *
+- * Contributor(s):
+- * If you wish your version of this file to be governed by only the CDDL or
+- * only the GPL Version 2, indicate your decision by adding "[Contributor]
+- * elects to include this software in this distribution under the [CDDL or GPL
+- * Version 2] license."  If you don't indicate a single choice of license, a
+- * recipient has the option to distribute your version of this file under
+- * either the CDDL, the GPL Version 2 or to extend the choice of license to
+- * its licensees as provided above.  However, if you add GPL Version 2 code
+- * and therefore, elected the GPL Version 2 license, then the option applies
+- * only if the new code is made subject to such option by the copyright
+- * holder.
++ * SPDX-License-Identifier: BSD-3-Clause
+  */
+ 
+ package javax.activation;
+diff -ubr javax.activation-api-1.2.0/javax/activation/MimetypesFileTypeMap.java jakarta.activation-api-1.2.2/javax/activation/MimetypesFileTypeMap.java
+--- javax.activation-api-1.2.0/javax/activation/MimetypesFileTypeMap.java	2017-05-19 15:41:32.000000000 +0900
++++ jakarta.activation-api-1.2.2/javax/activation/MimetypesFileTypeMap.java	2020-02-20 18:34:30.000000000 +0900
+@@ -1,41 +1,11 @@
+ /*
+- * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
++ * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+  *
+- * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
++ * This program and the accompanying materials are made available under the
++ * terms of the Eclipse Distribution License v. 1.0, which is available at
++ * http://www.eclipse.org/org/documents/edl-v10.php.
+  *
+- * The contents of this file are subject to the terms of either the GNU
+- * General Public License Version 2 only ("GPL") or the Common Development
+- * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License.  You can
+- * obtain a copy of the License at
+- * https://oss.oracle.com/licenses/CDDL+GPL-1.1
+- * or LICENSE.txt.  See the License for the specific
+- * language governing permissions and limitations under the License.
+- *
+- * When distributing the software, include this License Header Notice in each
+- * file and include the License file at LICENSE.txt.
+- *
+- * GPL Classpath Exception:
+- * Oracle designates this particular file as subject to the "Classpath"
+- * exception as provided by Oracle in the GPL Version 2 section of the License
+- * file that accompanied this code.
+- *
+- * Modifications:
+- * If applicable, add the following below the License Header, with the fields
+- * enclosed by brackets [] replaced by your own identifying information:
+- * "Portions Copyright [year] [name of copyright owner]"
+- *
+- * Contributor(s):
+- * If you wish your version of this file to be governed by only the CDDL or
+- * only the GPL Version 2, indicate your decision by adding "[Contributor]
+- * elects to include this software in this distribution under the [CDDL or GPL
+- * Version 2] license."  If you don't indicate a single choice of license, a
+- * recipient has the option to distribute your version of this file under
+- * either the CDDL, the GPL Version 2 or to extend the choice of license to
+- * its licensees as provided above.  However, if you add GPL Version 2 code
+- * and therefore, elected the GPL Version 2 license, then the option applies
+- * only if the new code is made subject to such option by the copyright
+- * holder.
++ * SPDX-License-Identifier: BSD-3-Clause
+  */
+ 
+ package javax.activation;
+diff -ubr javax.activation-api-1.2.0/javax/activation/package.html jakarta.activation-api-1.2.2/javax/activation/package.html
+--- javax.activation-api-1.2.0/javax/activation/package.html	2017-05-19 15:41:32.000000000 +0900
++++ jakarta.activation-api-1.2.2/javax/activation/package.html	2020-02-20 18:34:30.000000000 +0900
+@@ -3,51 +3,20 @@
+ <HEAD>
+ <!--
+ 
+-    DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
++    Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
+ 
+-    Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
++    This program and the accompanying materials are made available under the
++    terms of the Eclipse Distribution License v. 1.0, which is available at
++    http://www.eclipse.org/org/documents/edl-v10.php.
+ 
+-    The contents of this file are subject to the terms of either the GNU
+-    General Public License Version 2 only ("GPL") or the Common Development
+-    and Distribution License("CDDL") (collectively, the "License").  You
+-    may not use this file except in compliance with the License.  You can
+-    obtain a copy of the License at
+-    https://oss.oracle.com/licenses/CDDL+GPL-1.1
+-    or LICENSE.txt.  See the License for the specific
+-    language governing permissions and limitations under the License.
+-
+-    When distributing the software, include this License Header Notice in each
+-    file and include the License file at LICENSE.txt.
+-
+-    GPL Classpath Exception:
+-    Oracle designates this particular file as subject to the "Classpath"
+-    exception as provided by Oracle in the GPL Version 2 section of the License
+-    file that accompanied this code.
+-
+-    Modifications:
+-    If applicable, add the following below the License Header, with the fields
+-    enclosed by brackets [] replaced by your own identifying information:
+-    "Portions Copyright [year] [name of copyright owner]"
+-
+-    Contributor(s):
+-    If you wish your version of this file to be governed by only the CDDL or
+-    only the GPL Version 2, indicate your decision by adding "[Contributor]
+-    elects to include this software in this distribution under the [CDDL or GPL
+-    Version 2] license."  If you don't indicate a single choice of license, a
+-    recipient has the option to distribute your version of this file under
+-    either the CDDL, the GPL Version 2 or to extend the choice of license to
+-    its licensees as provided above.  However, if you add GPL Version 2 code
+-    and therefore, elected the GPL Version 2 license, then the option applies
+-    only if the new code is made subject to such option by the copyright
+-    holder.
++    SPDX-License-Identifier: BSD-3-Clause
+ 
+ -->
+ 
+ </HEAD>
+ <BODY BGCOLOR="white">
+ 
+-The JavaBeans(TM) Activation Framework is used by the JavaMail(TM)
+-API to manage MIME data.
++Jakarta Activation is used by Jakarta Mail to manage MIME data.
+ 
+ </BODY>
+ </HTML>
+diff -ubr javax.activation-api-1.2.0/javax/activation/SecuritySupport.java jakarta.activation-api-1.2.2/javax/activation/SecuritySupport.java
+--- javax.activation-api-1.2.0/javax/activation/SecuritySupport.java	2017-05-19 15:41:30.000000000 +0900
++++ jakarta.activation-api-1.2.2/javax/activation/SecuritySupport.java	2020-02-20 18:34:30.000000000 +0900
+@@ -1,41 +1,11 @@
+ /*
+- * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
++ * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+  *
+- * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
++ * This program and the accompanying materials are made available under the
++ * terms of the Eclipse Distribution License v. 1.0, which is available at
++ * http://www.eclipse.org/org/documents/edl-v10.php.
+  *
+- * The contents of this file are subject to the terms of either the GNU
+- * General Public License Version 2 only ("GPL") or the Common Development
+- * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License.  You can
+- * obtain a copy of the License at
+- * https://oss.oracle.com/licenses/CDDL+GPL-1.1
+- * or LICENSE.txt.  See the License for the specific
+- * language governing permissions and limitations under the License.
+- *
+- * When distributing the software, include this License Header Notice in each
+- * file and include the License file at LICENSE.txt.
+- *
+- * GPL Classpath Exception:
+- * Oracle designates this particular file as subject to the "Classpath"
+- * exception as provided by Oracle in the GPL Version 2 section of the License
+- * file that accompanied this code.
+- *
+- * Modifications:
+- * If applicable, add the following below the License Header, with the fields
+- * enclosed by brackets [] replaced by your own identifying information:
+- * "Portions Copyright [year] [name of copyright owner]"
+- *
+- * Contributor(s):
+- * If you wish your version of this file to be governed by only the CDDL or
+- * only the GPL Version 2, indicate your decision by adding "[Contributor]
+- * elects to include this software in this distribution under the [CDDL or GPL
+- * Version 2] license."  If you don't indicate a single choice of license, a
+- * recipient has the option to distribute your version of this file under
+- * either the CDDL, the GPL Version 2 or to extend the choice of license to
+- * its licensees as provided above.  However, if you add GPL Version 2 code
+- * and therefore, elected the GPL Version 2 license, then the option applies
+- * only if the new code is made subject to such option by the copyright
+- * holder.
++ * SPDX-License-Identifier: BSD-3-Clause
+  */
+ 
+ package javax.activation;
+diff -ubr javax.activation-api-1.2.0/javax/activation/UnsupportedDataTypeException.java jakarta.activation-api-1.2.2/javax/activation/UnsupportedDataTypeException.java
+--- javax.activation-api-1.2.0/javax/activation/UnsupportedDataTypeException.java	2017-05-19 15:41:30.000000000 +0900
++++ jakarta.activation-api-1.2.2/javax/activation/UnsupportedDataTypeException.java	2020-02-20 18:34:30.000000000 +0900
+@@ -1,41 +1,11 @@
+ /*
+- * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
++ * Copyright (c) 1997, 2018 Oracle and/or its affiliates. All rights reserved.
+  *
+- * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
++ * This program and the accompanying materials are made available under the
++ * terms of the Eclipse Distribution License v. 1.0, which is available at
++ * http://www.eclipse.org/org/documents/edl-v10.php.
+  *
+- * The contents of this file are subject to the terms of either the GNU
+- * General Public License Version 2 only ("GPL") or the Common Development
+- * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License.  You can
+- * obtain a copy of the License at
+- * https://oss.oracle.com/licenses/CDDL+GPL-1.1
+- * or LICENSE.txt.  See the License for the specific
+- * language governing permissions and limitations under the License.
+- *
+- * When distributing the software, include this License Header Notice in each
+- * file and include the License file at LICENSE.txt.
+- *
+- * GPL Classpath Exception:
+- * Oracle designates this particular file as subject to the "Classpath"
+- * exception as provided by Oracle in the GPL Version 2 section of the License
+- * file that accompanied this code.
+- *
+- * Modifications:
+- * If applicable, add the following below the License Header, with the fields
+- * enclosed by brackets [] replaced by your own identifying information:
+- * "Portions Copyright [year] [name of copyright owner]"
+- *
+- * Contributor(s):
+- * If you wish your version of this file to be governed by only the CDDL or
+- * only the GPL Version 2, indicate your decision by adding "[Contributor]
+- * elects to include this software in this distribution under the [CDDL or GPL
+- * Version 2] license."  If you don't indicate a single choice of license, a
+- * recipient has the option to distribute your version of this file under
+- * either the CDDL, the GPL Version 2 or to extend the choice of license to
+- * its licensees as provided above.  However, if you add GPL Version 2 code
+- * and therefore, elected the GPL Version 2 license, then the option applies
+- * only if the new code is made subject to such option by the copyright
+- * holder.
++ * SPDX-License-Identifier: BSD-3-Clause
+  */
+ 
+ package javax.activation;
+diff -ubr javax.activation-api-1.2.0/javax/activation/URLDataSource.java jakarta.activation-api-1.2.2/javax/activation/URLDataSource.java
+--- javax.activation-api-1.2.0/javax/activation/URLDataSource.java	2017-05-19 15:41:34.000000000 +0900
++++ jakarta.activation-api-1.2.2/javax/activation/URLDataSource.java	2020-02-20 18:34:30.000000000 +0900
+@@ -1,41 +1,11 @@
+ /*
+- * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
++ * Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
+  *
+- * Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
++ * This program and the accompanying materials are made available under the
++ * terms of the Eclipse Distribution License v. 1.0, which is available at
++ * http://www.eclipse.org/org/documents/edl-v10.php.
+  *
+- * The contents of this file are subject to the terms of either the GNU
+- * General Public License Version 2 only ("GPL") or the Common Development
+- * and Distribution License("CDDL") (collectively, the "License").  You
+- * may not use this file except in compliance with the License.  You can
+- * obtain a copy of the License at
+- * https://oss.oracle.com/licenses/CDDL+GPL-1.1
+- * or LICENSE.txt.  See the License for the specific
+- * language governing permissions and limitations under the License.
+- *
+- * When distributing the software, include this License Header Notice in each
+- * file and include the License file at LICENSE.txt.
+- *
+- * GPL Classpath Exception:
+- * Oracle designates this particular file as subject to the "Classpath"
+- * exception as provided by Oracle in the GPL Version 2 section of the License
+- * file that accompanied this code.
+- *
+- * Modifications:
+- * If applicable, add the following below the License Header, with the fields
+- * enclosed by brackets [] replaced by your own identifying information:
+- * "Portions Copyright [year] [name of copyright owner]"
+- *
+- * Contributor(s):
+- * If you wish your version of this file to be governed by only the CDDL or
+- * only the GPL Version 2, indicate your decision by adding "[Contributor]
+- * elects to include this software in this distribution under the [CDDL or GPL
+- * Version 2] license."  If you don't indicate a single choice of license, a
+- * recipient has the option to distribute your version of this file under
+- * either the CDDL, the GPL Version 2 or to extend the choice of license to
+- * its licensees as provided above.  However, if you add GPL Version 2 code
+- * and therefore, elected the GPL Version 2 license, then the option applies
+- * only if the new code is made subject to such option by the copyright
+- * holder.
++ * SPDX-License-Identifier: BSD-3-Clause
+  */
+ 
+ package javax.activation;
+@@ -49,7 +19,7 @@
+ /**
+  * The URLDataSource class provides an object that wraps a <code>URL</code>
+  * object in a DataSource interface. URLDataSource simplifies the handling
+- * of data described by URLs within the JavaBeans Activation Framework
++ * of data described by URLs within Jakarta Activation
+  * because this class can be used to create new DataHandlers. <i>NOTE: The
+  * DataHandler object creates a URLDataSource internally,
+  * when it is constructed with a URL.</i>
+javax.activation-api-1.2.0/javax/activation のみに存在: .x9.swp
+jakarta.activation-api-1.2.2/META-INF のみに存在: LICENSE.md
+javax.activation-api-1.2.0/META-INF のみに存在: LICENSE.txt
+diff -ubr javax.activation-api-1.2.0/META-INF/MANIFEST.MF jakarta.activation-api-1.2.2/META-INF/MANIFEST.MF
+--- javax.activation-api-1.2.0/META-INF/MANIFEST.MF	2017-09-06 16:13:14.000000000 +0900
++++ jakarta.activation-api-1.2.2/META-INF/MANIFEST.MF	2020-02-20 18:37:28.000000000 +0900
+@@ -1,6 +1,6 @@
+ Manifest-Version: 1.0
+ Archiver-Version: Plexus Archiver
+ Created-By: Apache Maven
+-Built-By: shannon
+-Build-Jdk: 1.7.0_121
++Built-By: default
++Build-Jdk: 11.0.4
+ 
+jakarta.activation-api-1.2.2/META-INF のみに存在: NOTICE.md
+jakarta.activation-api-1.2.2 のみに存在: module-info.java
+diff -ubr javax.activation-api-1.2.0/pom.xml jakarta.activation-api-1.2.2/pom.xml
+--- javax.activation-api-1.2.0/pom.xml	2017-09-06 14:23:06.000000000 +0900
++++ jakarta.activation-api-1.2.2/pom.xml	2020-02-20 18:34:28.000000000 +0900
+@@ -1,83 +1,52 @@
+ <?xml version="1.0" encoding="iso-8859-1"?>
+ <!--
+ 
+-    DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
++    Copyright (c) 1997, 2019 Oracle and/or its affiliates. All rights reserved.
+ 
+-    Copyright (c) 1997-2017 Oracle and/or its affiliates. All rights reserved.
++    This program and the accompanying materials are made available under the
++    terms of the Eclipse Distribution License v. 1.0, which is available at
++    http://www.eclipse.org/org/documents/edl-v10.php.
+ 
+-    The contents of this file are subject to the terms of either the GNU
+-    General Public License Version 2 only ("GPL") or the Common Development
+-    and Distribution License("CDDL") (collectively, the "License").  You
+-    may not use this file except in compliance with the License.  You can
+-    obtain a copy of the License at
+-    https://oss.oracle.com/licenses/CDDL+GPL-1.1
+-    or LICENSE.txt.  See the License for the specific
+-    language governing permissions and limitations under the License.
+-
+-    When distributing the software, include this License Header Notice in each
+-    file and include the License file at LICENSE.txt.
+-
+-    GPL Classpath Exception:
+-    Oracle designates this particular file as subject to the "Classpath"
+-    exception as provided by Oracle in the GPL Version 2 section of the License
+-    file that accompanied this code.
+-
+-    Modifications:
+-    If applicable, add the following below the License Header, with the fields
+-    enclosed by brackets [] replaced by your own identifying information:
+-    "Portions Copyright [year] [name of copyright owner]"
+-
+-    Contributor(s):
+-    If you wish your version of this file to be governed by only the CDDL or
+-    only the GPL Version 2, indicate your decision by adding "[Contributor]
+-    elects to include this software in this distribution under the [CDDL or GPL
+-    Version 2] license."  If you don't indicate a single choice of license, a
+-    recipient has the option to distribute your version of this file under
+-    either the CDDL, the GPL Version 2 or to extend the choice of license to
+-    its licensees as provided above.  However, if you add GPL Version 2 code
+-    and therefore, elected the GPL Version 2 license, then the option applies
+-    only if the new code is made subject to such option by the copyright
+-    holder.
++    SPDX-License-Identifier: BSD-3-Clause
+ 
+ -->
+-
+ <!--
+-    This project builds the JAF API jar file, which contains only
++    This project builds the Activation API jar file, which contains only
+     the javax.activation.* API definitions and is *only* intended to be used
+     for programs to compile against.  Note that it includes none of the
+     implementation-specific classes that the javax.activation.* classes rely on.
+ -->
+-
+ <project xmlns="http://maven.apache.org/POM/4.0.0"
+-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
++    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+ 			    http://maven.apache.org/maven-v4_0_0.xsd">
+     <parent>
+ 	<groupId>com.sun.activation</groupId>
+ 	<artifactId>all</artifactId>
+-	<version>1.2.0</version>
++        <version>1.2.2</version>
+     </parent>
+     <modelVersion>4.0.0</modelVersion>
+-    <groupId>javax.activation</groupId>
+-    <artifactId>javax.activation-api</artifactId>
++    <groupId>jakarta.activation</groupId>
++    <artifactId>jakarta.activation-api</artifactId>
+     <packaging>jar</packaging>
+-    <name>JavaBeans Activation Framework API jar</name>
+-
++    <name>Jakarta Activation API jar</name>
+     <properties>
+ 	<activation.extensionName>
+-	    javax.activation
++            jakarta.activation
+ 	</activation.extensionName>
+ 	<activation.moduleName>
+-	    java.activation
++            jakarta.activation
+ 	</activation.moduleName>
+ 	<activation.packages.export>
+-	    javax.activation.*; version=${activation.spec.version}
++            javax.activation.*; version=${activation.spec.version},
++	    !com.sun.*
+ 	</activation.packages.export>
++        <activation.packages.import>
++	    !com.sun.*
++        </activation.packages.import>
+ 	<activation.bundle.symbolicName>
+-	    javax.activation-api
++            jakarta.activation-api
+ 	</activation.bundle.symbolicName>
+     </properties>
+-
+     <build>
+         <plugins>
+ 	    <plugin>
+@@ -102,7 +71,7 @@
+ 			    <artifactItems>
+ 				<artifactItem>
+ 				    <groupId>com.sun.activation</groupId>
+-				    <artifactId>javax.activation</artifactId>
++                                    <artifactId>jakarta.activation</artifactId>
+ 				    <version>${project.version}</version>
+ 				    <classifier>sources</classifier>
+ 				    <outputDirectory>
+@@ -117,28 +86,62 @@
+ 		    <artifactItems>
+ 			<artifactItem>
+ 			    <groupId>com.sun.activation</groupId>
+-			    <artifactId>javax.activation</artifactId>
++                            <artifactId>jakarta.activation</artifactId>
+ 			    <version>${project.version}</version>
+ 			</artifactItem>
+ 		    </artifactItems>
+ 		    <outputDirectory>
+ 			${project.build.outputDirectory}
+ 		    </outputDirectory>
+-		    <includes>
+-			javax/**,
+-			META-INF/LICENSE.txt
+-		    </includes>
++		    <!--
++			Include all the implementation source files so that
++			javadoc run as part of "deploy" will find all the
++			required classes.
++
++			Don't include the metadata files from the original
++			jar file.
++		    -->
++		    <excludes>
++			META-INF/**
++		    </excludes>
+ 		</configuration>
+ 	    </plugin>
++
++	    <!--
++		 Skip compiling since the dependency plugin pulled in
++		 the sources and class files.
++	    -->
++	    <plugin>
++		<artifactId>maven-compiler-plugin</artifactId>
++		<executions>
++		    <execution>
++			<id>default-compile</id>
++			<configuration>
++			    <skipMain>true</skipMain>
++			</configuration>
++		    </execution>
++		</executions>
++	    </plugin>
++
++	    <!--
++		Don't include the implementation classes in the jar files.
++	    -->
+ 	    <plugin>
+ 		<artifactId>maven-jar-plugin</artifactId>
+ 		<configuration>
+ 		    <finalName>${project.artifactId}</finalName>
+-		    <archive>
+-			<manifestFile>
+-			  ${project.build.outputDirectory}/META-INF/MANIFEST.MF
+-			</manifestFile>
+-		    </archive>
++		    <excludes>
++			<exclude>com/**</exclude>
++		    </excludes>
++                </configuration>
++            </plugin>
++
++            <plugin>
++                <artifactId>maven-source-plugin</artifactId>
++                <configuration>
++		    <excludes>
++			<exclude>com/**</exclude>
++		    </excludes>
+ 		</configuration>
+ 	    </plugin>
+         </plugins>
