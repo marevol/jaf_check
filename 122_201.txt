@@ -52,8 +52,8 @@ META-INF/NOTICE.md
 module-info.java
 
 <<<Files: jakarta.activation-api-1.2.2-sources.jar - jakarta.activation-api-2.0.1-sources.jar>>>
---- /tmp/jaf1.1915505	2021-04-08 09:36:16.223469745 +0900
-+++ /tmp/jaf2.1915505	2021-04-08 09:36:16.227469751 +0900
+--- /tmp/jaf1.1917688	2021-04-08 09:47:15.222448545 +0900
++++ /tmp/jaf2.1917688	2021-04-08 09:47:15.226448570 +0900
 @@ -1,24 +1,25 @@
 -javax/activation/ActivationDataFlavor.java
 -javax/activation/CommandInfo.java
@@ -102,8 +102,8 @@ module-info.java
 -pom.xml
 
 <<<Contents: jakarta.activation-api-1.2.2 - jakarta.activation-api-2.0.1>>>
-jakarta.activation-api-2.0.1 のみに存在: jakarta
-jakarta.activation-api-1.2.2 のみに存在: javax
+Only in jakarta.activation-api-2.0.1: jakarta
+Only in jakarta.activation-api-1.2.2: javax
 diff -ubr jakarta.activation-api-1.2.2/META-INF/MANIFEST.MF jakarta.activation-api-2.0.1/META-INF/MANIFEST.MF
 --- jakarta.activation-api-1.2.2/META-INF/MANIFEST.MF	2020-02-20 18:37:28.000000000 +0900
 +++ jakarta.activation-api-2.0.1/META-INF/MANIFEST.MF	2021-02-12 08:23:48.000000000 +0900
@@ -116,7 +116,7 @@ diff -ubr jakarta.activation-api-1.2.2/META-INF/MANIFEST.MF jakarta.activation-a
 +Created-By: Maven Archiver 3.4.0
 +Build-Jdk-Spec: 11
  
-jakarta.activation-api-2.0.1/META-INF のみに存在: maven
+Only in jakarta.activation-api-2.0.1/META-INF: maven
 diff -ubr jakarta.activation-api-1.2.2/META-INF/NOTICE.md jakarta.activation-api-2.0.1/META-INF/NOTICE.md
 --- jakarta.activation-api-1.2.2/META-INF/NOTICE.md	2020-02-20 18:34:28.000000000 +0900
 +++ jakarta.activation-api-2.0.1/META-INF/NOTICE.md	2021-02-12 08:22:56.000000000 +0900
@@ -151,4 +151,4 @@ diff -ubr jakarta.activation-api-1.2.2/module-info.java jakarta.activation-api-2
      requires java.logging;
 -    requires java.desktop;	// for image/jpeg handler
  }
-jakarta.activation-api-1.2.2 のみに存在: pom.xml
+Only in jakarta.activation-api-1.2.2: pom.xml

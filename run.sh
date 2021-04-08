@@ -2,6 +2,7 @@
 
 LANG=en_US.UTF-8
 LC_ALL=en_US.UTF-8
+LANGUAGE=en
 
 cd $(dirname $0)
 base_dir=$(pwd)

@@ -53,8 +53,8 @@ module-info.java
 pom.xml
 
 <<<Files: javax.activation-api-1.2.0-sources.jar - jakarta.activation-api-1.2.2-sources.jar>>>
---- /tmp/jaf1.1915505	2021-04-08 09:36:16.199469710 +0900
-+++ /tmp/jaf2.1915505	2021-04-08 09:36:16.203469716 +0900
+--- /tmp/jaf1.1917688	2021-04-08 09:47:15.198448387 +0900
++++ /tmp/jaf2.1917688	2021-04-08 09:47:15.206448439 +0900
 @@ -1,8 +1,5 @@
  javax/activation/ActivationDataFlavor.java
  javax/activation/CommandInfo.java
@@ -188,9 +188,9 @@ diff -ubr javax.activation-api-1.2.0/javax/activation/CommandInfo.java jakarta.a
   */
  
  package javax.activation;
-javax.activation-api-1.2.0/javax/activation のみに存在: CommandInfo.java.jdk8
-javax.activation-api-1.2.0/javax/activation のみに存在: CommandInfo.java.jdk9
-javax.activation-api-1.2.0/javax/activation のみに存在: CommandInfo.java.jdk9-
+Only in javax.activation-api-1.2.0/javax/activation: CommandInfo.java.jdk8
+Only in javax.activation-api-1.2.0/javax/activation: CommandInfo.java.jdk9
+Only in javax.activation-api-1.2.0/javax/activation: CommandInfo.java.jdk9-
 diff -ubr javax.activation-api-1.2.0/javax/activation/CommandMap.java jakarta.activation-api-1.2.2/javax/activation/CommandMap.java
 --- javax.activation-api-1.2.0/javax/activation/CommandMap.java	2017-05-19 15:41:32.000000000 +0900
 +++ jakarta.activation-api-1.2.2/javax/activation/CommandMap.java	2020-02-20 18:34:30.000000000 +0900
@@ -1079,9 +1079,9 @@ diff -ubr javax.activation-api-1.2.0/javax/activation/URLDataSource.java jakarta
   * because this class can be used to create new DataHandlers. <i>NOTE: The
   * DataHandler object creates a URLDataSource internally,
   * when it is constructed with a URL.</i>
-javax.activation-api-1.2.0/javax/activation のみに存在: .x9.swp
-jakarta.activation-api-1.2.2/META-INF のみに存在: LICENSE.md
-javax.activation-api-1.2.0/META-INF のみに存在: LICENSE.txt
+Only in javax.activation-api-1.2.0/javax/activation: .x9.swp
+Only in jakarta.activation-api-1.2.2/META-INF: LICENSE.md
+Only in javax.activation-api-1.2.0/META-INF: LICENSE.txt
 diff -ubr javax.activation-api-1.2.0/META-INF/MANIFEST.MF jakarta.activation-api-1.2.2/META-INF/MANIFEST.MF
 --- javax.activation-api-1.2.0/META-INF/MANIFEST.MF	2017-09-06 16:13:14.000000000 +0900
 +++ jakarta.activation-api-1.2.2/META-INF/MANIFEST.MF	2020-02-20 18:37:28.000000000 +0900
@@ -1094,8 +1094,8 @@ diff -ubr javax.activation-api-1.2.0/META-INF/MANIFEST.MF jakarta.activation-api
 +Built-By: default
 +Build-Jdk: 11.0.4
  
-jakarta.activation-api-1.2.2/META-INF のみに存在: NOTICE.md
-jakarta.activation-api-1.2.2 のみに存在: module-info.java
+Only in jakarta.activation-api-1.2.2/META-INF: NOTICE.md
+Only in jakarta.activation-api-1.2.2: module-info.java
 diff -ubr javax.activation-api-1.2.0/pom.xml jakarta.activation-api-1.2.2/pom.xml
 --- javax.activation-api-1.2.0/pom.xml	2017-09-06 14:23:06.000000000 +0900
 +++ jakarta.activation-api-1.2.2/pom.xml	2020-02-20 18:34:28.000000000 +0900
